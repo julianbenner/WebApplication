@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e8fca58-d723-4006-9c2d-34161823a24f" name="Default" comment="">
+    <list default="true" id="4e8fca58-d723-4006-9c2d-34161823a24f" name="Default" comment="Initial&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c10.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c101.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c111.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c121.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c130.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c141.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c150.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c161.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c171.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c180.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c191.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1a1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1b1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1c0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1d1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1e0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c1f1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c20.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c200.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c211.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c221.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c230.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c241.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c251.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c260.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c271.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c281.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c290.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2a1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2b1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2c1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2d0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2e1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c2f0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c300.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c31.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c311.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c321.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c331.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c340.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c351.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c361.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c371.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c380.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c391.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3a1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3b1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3c0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3d1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3e1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c3f1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c400.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c41.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c411.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c421.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c430.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c441.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c451.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c461.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c470.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c481.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c4c0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c4d1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c4e1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c51.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c60.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c71.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c81.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/c90.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/ca1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/cb1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/cc0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/cd1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/ce1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/cf0.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/log/log.ctrl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/log/log1.dat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/log/logmirror.ctrl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/README_DO_NOT_TOUCH_FILES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/log/README_DO_NOT_TOUCH_FILES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/seg0/README_DO_NOT_TOUCH_FILES.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/db.lck" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myDatabase/service.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login_2.jsp" afterPath="$PROJECT_DIR$/web/login_2.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main.css" afterPath="$PROJECT_DIR$/web/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebApplication.iws" />
@@ -80,16 +165,7 @@
       <file leaf-file-name="login_2.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login_2.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="589">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlets/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="703">
+            <state line="9" column="8" selection-start="369" selection-end="369" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="589">
               <folding />
             </state>
           </provider>
@@ -98,7 +174,16 @@
       <file leaf-file-name="genericpage.tag" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/genericpage.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="158" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="874">
+            <state line="15" column="158" selection-start="720" selection-end="720" vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="874">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBConnection.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/servlets/DBConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="757" selection-end="757" vertical-scroll-proportion="1.0968343" vertical-offset="0" max-vertical-offset="950">
               <folding />
             </state>
           </provider>
@@ -137,16 +222,16 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="21" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1843">
+            <state line="94" column="18" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0" vertical-offset="1382" max-vertical-offset="1919">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="register.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="17" selection-start="356" selection-end="356" vertical-scroll-proportion="0.36795774" vertical-offset="0" max-vertical-offset="568">
+            <state line="6" column="20" selection-start="187" selection-end="187" vertical-scroll-proportion="-4.071429" vertical-offset="0" max-vertical-offset="494">
               <folding />
             </state>
           </provider>
@@ -189,11 +274,11 @@
         <option value="$PROJECT_DIR$/web/register_2.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/servlets/Login.java" />
-        <option value="$PROJECT_DIR$/web/login_2.jsp" />
-        <option value="$PROJECT_DIR$/web/main.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/tags/genericpage.tag" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/register.jsp" />
+        <option value="$PROJECT_DIR$/web/login_2.jsp" />
+        <option value="$PROJECT_DIR$/web/main.css" />
       </list>
     </option>
   </component>
@@ -206,7 +291,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1932" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -244,6 +330,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servlets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -278,6 +406,7 @@
       <recent name="C:\Users\Julian\Downloads\WebApplication\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Julian\Downloads\WebApplication" />
       <recent name="C:\Users\Julian\Downloads\WebApplication\web" />
       <recent name="C:\Users\Julian\Downloads\WebApplication\src" />
     </key>
@@ -599,24 +728,28 @@
       <workItem from="1392816017854" duration="5897000" />
       <workItem from="1392909209650" duration="5115000" />
       <workItem from="1393162515211" duration="51000" />
-      <workItem from="1393162602025" duration="798000" />
+      <workItem from="1393162602025" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="Initial&#10;">
       <created>1393163374149</created>
       <updated>1393163374149</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial&#10;">
+      <created>1393163409970</created>
+      <updated>1393163409970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40093000" />
+    <option name="totallyTimeSpent" value="41042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -630,14 +763,14 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3303095" sideWeight="0.50053823" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23003195" sideWeight="0.5008881" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23003195" sideWeight="0.4994618" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39266452" sideWeight="0.6395101" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23003195" sideWeight="0.4991119" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39266452" sideWeight="0.6395101" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -911,11 +1044,6 @@
         <state line="39" column="3" selection-start="1716" selection-end="1841" vertical-scroll-proportion="0.0" vertical-offset="741" max-vertical-offset="4484" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="950" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/VerifyLogin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="82" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="893" />
@@ -953,13 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login_2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="570">
@@ -967,30 +1088,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="1843">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/genericpage.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="158" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="874">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="44" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="798">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="342">
           <folding />
         </state>
       </provider>
@@ -1006,7 +1106,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="356" selection-end="356" vertical-scroll-proportion="0.36795774" vertical-offset="0" max-vertical-offset="568">
+        <state line="6" column="20" selection-start="187" selection-end="187" vertical-scroll-proportion="-4.071429" vertical-offset="0" max-vertical-offset="494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login_2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="369" selection-end="369" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="589">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="18" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0" vertical-offset="1382" max-vertical-offset="1919">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/genericpage.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="158" selection-start="720" selection-end="720" vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="874">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="757" selection-end="757" vertical-scroll-proportion="1.0968343" vertical-offset="0" max-vertical-offset="950">
           <folding />
         </state>
       </provider>

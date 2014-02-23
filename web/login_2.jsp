@@ -4,10 +4,10 @@
 
 <t:genericpage>
     <jsp:attribute name="htmlHeader">
-        <meta http-equiv="refresh" content="3; url=<c:out value="${referer}" />" />
+        <meta http-equiv="refresh" content="4; url=<c:out value="${referer}" />" />
     </jsp:attribute>
     <jsp:attribute name="header">
-      <h1>Welcome</h1>
+      > Login
     </jsp:attribute>
     <jsp:attribute name="footer">
       <p id="copyright"></p>

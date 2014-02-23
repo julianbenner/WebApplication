@@ -90,3 +90,7 @@ a, a:hover, a:visited {
     display: inline-block;
     width: 100%;
 }
+
+#body {
+    padding: 10px;
+}
