@@ -1,0 +1,92 @@
+html {
+    background-color: #ddd;
+}
+
+body {
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: solid #000 1px;
+    color: #000;
+    font-family: sans-serif;
+    background-color: #fff;
+    font-size: 12pt;
+}
+
+a, a:hover, a:visited {
+    color: #123;
+}
+
+#heading {
+    position: absolute;
+    font-size: 2em;
+}
+
+#spanSubNav {
+    font-size: 0.5em;
+}
+
+#header {
+    height: 80px;
+    width: 100%;
+    border-bottom: solid #222 1px;
+}
+
+.input {
+    font-size: 0.8em;
+    color: #222;
+}
+
+#pagefooter {
+    margin: auto;
+    width: 100px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 0.5em;
+}
+
+.inputLogin {
+    border: solid #aaa 1px;
+    background-color: #ccc;
+    color: #222;
+    width: 100px;
+    height: 20px;
+    font-size: 0.85em;
+    padding: 2px;
+    margin-right: 2px;
+}
+
+#inputPw {
+    margin-top: 22px;
+}
+
+#btnLogin {
+    border: none;
+    background-color: #aaa;
+    color: #000;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+}
+
+#containerLogin {
+    position: absolute;
+    margin-left: 655px;
+    width: 144px;
+    font-size: 0.8em;
+}
+
+#spanRegNot {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: -6px;
+}
+
+#spanLogin {
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+}
