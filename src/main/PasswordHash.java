@@ -1,4 +1,4 @@
-package servlets;/*
+package main;/*
  * Password Hashing With PBKDF2 (http://crackstation.net/hashing-security.htm).
  * Copyright (c) 2013, Taylor Hornby
  * All rights reserved.
@@ -187,7 +187,7 @@ public class PasswordHash
     }
 
     /**
-     * Tests the basic functionality of the servlets.PasswordHash class
+     * Tests the basic functionality of the main.PasswordHash class
      *
      * @param   args        ignored
      */

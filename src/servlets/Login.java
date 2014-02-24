@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import main.*;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by Julian on 09/02/14.
@@ -17,15 +18,24 @@ public class Login extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		User userObj = VerifyLogin.verifyLogin(name, password);
+		String status = "";
 
 		if(userObj == null) {
 
 		} else {
 			request.getSession().setAttribute("user", userObj);
 		}
-		request.setAttribute("referer", request.getHeader("referer"));
-		request.setAttribute("userObj", userObj);
-		RequestDispatcher view = request.getRequestDispatcher("login_2.jsp");
-		view.forward(request, response);
+
+		if(userObj != null)
+			status = "Login successful as " + name;
+		else
+			status = "Sorry, username or password were wrong.";
+
+		request.setAttribute("status", status);
+		String referer = new URL(request.getHeader("referer")).getFile();
+		if(referer.contains("/")) referer = "index.jsp";
+		request.getRequestDispatcher(referer).forward(request, response);
+		//RequestDispatcher view = request.getRequestDispatcher(referer);
+		//view.forward(request, response);
 	}
 }

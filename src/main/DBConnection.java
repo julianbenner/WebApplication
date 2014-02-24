@@ -1,9 +1,8 @@
-package servlets;
+package main;
 
 import org.apache.derby.jdbc.EmbeddedDriver;
 
 import java.sql.*;
-
 /**
  * Created by Julian on 09/02/14.
  */

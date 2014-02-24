@@ -20,6 +20,16 @@
     </servlet>
 
     <servlet-mapping>
+        <servlet-name>UserCP</servlet-name>
+        <url-pattern>/usercp.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserCP</servlet-name>
+        <servlet-class>servlets.UserCP</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout.do</url-pattern>
     </servlet-mapping>

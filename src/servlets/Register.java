@@ -15,9 +15,16 @@ public class Register extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		int id = NewUser.newUser(name, password);
+		String status = "";
 
-		request.setAttribute("id", id);
-		RequestDispatcher view = request.getRequestDispatcher("register_2.jsp");
+		if(id==-1)
+			status = "Registration failed";
+		else
+			status = "User " + name + " registered as ID " + id;
+
+		request.setAttribute("status", status);
+		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 		view.forward(request, response);
 	}
 }

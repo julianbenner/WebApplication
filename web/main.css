@@ -47,10 +47,17 @@ a, a:hover, a:visited {
     font-size: 0.5em;
 }
 
-.inputLogin {
+.inputGeneric {
     border: solid #aaa 1px;
-    background-color: #ccc;
+    background-color: #ddd;
     color: #222;
+}
+
+.inputWrong {
+    border: solid #f22 1px !important;
+}
+
+.inputLogin {
     width: 100px;
     height: 20px;
     font-size: 0.85em;
@@ -62,10 +69,13 @@ a, a:hover, a:visited {
     margin-top: 22px;
 }
 
-#btnLogin {
+.btnGeneric {
     border: none;
     background-color: #aaa;
     color: #000;
+}
+
+#btnLogin {
     height: 42px;
     width: 42px;
     position: absolute;
@@ -93,4 +103,14 @@ a, a:hover, a:visited {
 
 #body {
     padding: 10px;
+}
+
+.emphasis {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.logicalGroup {
+    border: solid #ddd 1px;
+    padding: 4px;
 }

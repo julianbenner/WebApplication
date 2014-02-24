@@ -1,5 +1,8 @@
 package servlets;
 
+import main.DBConnection;
+import main.PasswordHash;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;

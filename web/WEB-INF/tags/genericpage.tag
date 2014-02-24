@@ -13,17 +13,17 @@
 <body>
 <div id="pageheader">
     <div id="header">
-        <div id="heading"><a href="<c:url value="/index.jsp"/>">WebApplication</a><br /><span id="spanSubNav"><a href="<c:url value="/index.jsp"/>">Index</a> <jsp:invoke fragment="header"/></span></div>
+        <div id="heading"><a href="<c:url value="/index.jsp"/>">WebApplication</a><br /><span id="spanSubNav"><a href="<c:url value="/index.jsp"/>">Index</a> <c:if test="${not empty status}">| <c:out value="${status}" /></c:if><jsp:invoke fragment="header"/></span></div>
         <div id="containerLogin">
             <c:choose>
                 <c:when test="${sessionScope.user != null}">
-                    <span id="spanLogin">Logged in as <c:out value="${sessionScope.user.getName()}" /><br /><a href="logout.do">Logout</a></span>
+                    <span id="spanLogin">Logged in as <a href="<c:url value="/usercp.do"/>"><c:out value="${sessionScope.user.getName()}" /></a><br /><a href="logout.do">Logout</a></span>
                 </c:when>
                 <c:otherwise>
                     <form method="POST" action="login.do">
-                        <input name="name" class="inputLogin" style="position: absolute" placeholder="Username" />
-                        <input name="password" type="password" class="inputLogin" id="inputPw" placeholder="Password" />
-                        <input type="submit" id="btnLogin" value="Login" />
+                        <input name="name" class="inputGeneric inputLogin" style="position: absolute" placeholder="Username" />
+                        <input name="password" type="password" class="inputGeneric inputLogin" id="inputPw" placeholder="Password" />
+                        <input type="submit" class="btnGeneric" id="btnLogin" value="Login" />
                     </form>
                     <span id="spanRegNot"><a href="register.jsp">not registered yet?</a></span>
                 </c:otherwise>
