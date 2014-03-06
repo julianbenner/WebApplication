@@ -8,6 +8,8 @@
 <head>
     <title><jsp:invoke fragment="title"/></title>
     <link rel="stylesheet" type="text/css" href="<c:url value="/main.css"/>" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
     <jsp:invoke fragment="htmlHeader" />
 </head>
 <body>

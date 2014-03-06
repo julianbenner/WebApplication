@@ -6,8 +6,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import main.*;
+import servlets.models.ChangeUser;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Julian on 09/02/14.
@@ -44,6 +47,11 @@ public class UserCP extends HttpServlet {
 		} else {
 			request.getSession().setAttribute("user", userObj);
 			request.setAttribute("userObj", userObj);
+			try {
+				request.setAttribute("addresses", ChangeUser.getAddresses(userObj));
+			} catch (SQLException e) {
+				request.setAttribute("addresses", new ArrayList<Address>());
+			}
 		}
 		request.setAttribute("status", status);
 		RequestDispatcher view = request.getRequestDispatcher("usercp.jsp");

@@ -43,4 +43,24 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/register.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Book</servlet-name>
+        <servlet-class>servlets.ShowBook</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Book</servlet-name>
+        <url-pattern>/book.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminCP</servlet-name>
+        <servlet-class>servlets.AdminCP</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminCP</servlet-name>
+        <url-pattern>/admincp.do</url-pattern>
+    </servlet-mapping>
 </web-app>

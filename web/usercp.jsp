@@ -28,6 +28,16 @@
                             <input type="password" class="inputGeneric<c:if test="${not empty result}"><c:if test="${result.isNewPasswordsDontMatch()}"> inputWrong</c:if></c:if>" placeholder="New password" name="newPw" /><br />
                             <input type="password" class="inputGeneric<c:if test="${not empty result}"><c:if test="${result.isNewPasswordsDontMatch()}"> inputWrong</c:if></c:if>" placeholder="New password (confirm)" name="newPw2" /><br />
                         </div>
+                        <div class="logicalGroup">
+                            <span class="emphasis">Addresses</span><br />
+                            <c:forEach items="${addresses}" var="current">
+                                <c:out value="${current.surname}" />, <c:out value="${current.firstname}" /><br />
+                                <c:out value="${current.address1}" /><br />
+                                <c:out value="${current.address2}" /><br />
+                                <c:out value="${current.address3}" /><br />
+                                <c:out value="${current.town}" /> <c:out value="${current.postalCode}" /><br />
+                            </c:forEach>g
+                        </div>
                         <input type="submit" class="btnGeneric" value="Save" />
                     </form>
                 </div>
