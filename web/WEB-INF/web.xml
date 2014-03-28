@@ -63,4 +63,24 @@
         <servlet-name>AdminCP</servlet-name>
         <url-pattern>/admincp.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchAuthors</servlet-name>
+        <servlet-class>servlets.SearchAuthors</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchAuthors</servlet-name>
+        <url-pattern>/search_authors.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Browse</servlet-name>
+        <servlet-class>servlets.Browse</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Browse</servlet-name>
+        <url-pattern>/browse.do</url-pattern>
+    </servlet-mapping>
 </web-app>

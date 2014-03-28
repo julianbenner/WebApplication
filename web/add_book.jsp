@@ -7,10 +7,17 @@
       Admin Control Panel
     </jsp:attribute>
     <jsp:attribute name="header">
-
+        > <a href="<c:url value="/admincp.do"/>">Control panel</a>
     </jsp:attribute>
     <jsp:attribute name="footer">
 
+    </jsp:attribute>
+    <jsp:attribute name="htmlHeader">
+        <script type="text/javascript">
+            $(document).ready(function () {
+            $('#author_search_input').keyup(function () { searchAuthors(); });
+            });
+        </script>
     </jsp:attribute>
     <jsp:body>
         <div>
@@ -21,21 +28,10 @@
                 </div>
                 <div class="logicalGroup" id="authors">
                     <span class="emphasis">Authors</span><br />
-                    <input class="inputGeneric" /><br />
-                    <input type="hidden" /><br />
-                    <div id="author_search">
+                    <input class="inputGeneric" id="author_search_input" /><a href="#" onclick="searchAuthors();return false;">Search</a><br />
+                    <div id="author_search" class="logicalGroup">
 
                     </div>
-                </div>
-                <div class="logicalGroup">
-                    <span class="emphasis">Addresses</span><br />
-                    <c:forEach items="${addresses}" var="current">
-                        <c:out value="${current.surname}" />, <c:out value="${current.firstname}" /><br />
-                        <c:out value="${current.address1}" /><br />
-                        <c:out value="${current.address2}" /><br />
-                        <c:out value="${current.address3}" /><br />
-                        <c:out value="${current.town}" /> <c:out value="${current.postalCode}" /><br />
-                    </c:forEach>
                 </div>
                 <input type="submit" class="btnGeneric" value="Save" />
             </form>

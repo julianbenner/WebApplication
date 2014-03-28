@@ -1,4 +1,4 @@
-package servlets;
+package servlets.models;
 
 import main.DBConnection;
 import main.PasswordHash;

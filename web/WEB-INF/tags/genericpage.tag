@@ -7,15 +7,22 @@
 <html>
 <head>
     <title><jsp:invoke fragment="title"/></title>
+    <link rel="shortcut icon" href="doge.png" />
     <link rel="stylesheet" type="text/css" href="<c:url value="/main.css"/>" />
+    <!--<link rel="stylesheet" type="text/css" href="<c:url value="/doge.css"/>" /> -->
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
+    <meta charset="utf-8">
     <jsp:invoke fragment="htmlHeader" />
 </head>
 <body>
 <div id="pageheader">
     <div id="header">
-        <div id="heading"><a href="<c:url value="/index.jsp"/>">WebApplication</a><br /><span id="spanSubNav"><a href="<c:url value="/index.jsp"/>">Index</a> <c:if test="${not empty status}">| <c:out value="${status}" /></c:if><jsp:invoke fragment="header"/></span></div>
+        <div id="heading">
+            <a href="<c:url value="/index.jsp"/>" style="display: inline-block;background: url(doge_medium.png); padding-left: 40px; background-repeat: no-repeat" >DogeLibrary</a><br />
+            <span id="spanSubNav"><a href="browse.do">Browse</a> | <a href="admincp.do">Control panel</a></span><br />
+            <span id="spanBreadcrumbs"><a href="<c:url value="/index.jsp"/>">Index</a> <c:if test="${not empty status}">| <c:out value="${status}" /></c:if><jsp:invoke fragment="header"/></span>
+        </div>
         <div id="containerLogin">
             <c:choose>
                 <c:when test="${sessionScope.user != null}">

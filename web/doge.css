@@ -1,5 +1,5 @@
 html {
-    background-color: #ddd;
+    background-color: lightgreen !important;
 }
 
 body {
@@ -7,21 +7,22 @@ body {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 15px;
-    /*border: solid #000 1px;*/
-    color: #000;
-    font-family: sans-serif;
-    background-color: #fff;
+    padding: 20px;
+    border: solid #000 1px;
+    color: purple;
+    font-family: "comic sans ms", sans-serif;
+    background-color: lightyellow;
     font-size: 12pt;
 }
 
 a, a:hover, a:visited {
-    color: #123;
+    color: inherit  !important;
 }
 
 #heading {
     position: absolute;
-    font-size: 2em;
+    font-size: 1.75em;
+    color: deeppink !important;
 }
 
 #spanSubNav {
@@ -117,17 +118,18 @@ a, a:hover, a:visited {
 
 .logicalGroup {
     display: block;
- /*   border: solid #ddd 1px;*/
-    background-color: #eee;
-    padding: 10px;
-    margin: 10px 2px 10px 2px;
+    border: solid #ddd 1px;
+    padding: 4px;
+    margin: 2px;
 }
 
 .authors {
     font-style: italic;
+    color: green !important;
 }
 
 .title {
     font-weight: bold;
     font-size: 1.2em;
+    color: deepskyblue !important;
 }

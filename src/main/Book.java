@@ -2,18 +2,26 @@ package main;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Julian on 05/03/14.
  */
 public class Book implements Serializable {
+	private int id;
 	private String title;
-	private Author author;
+	private List<Author> authors;
 	private Calendar releaseDate;
+	private String isbn;
+	private String publisher;
+	private String description;
+	private int shelf;
 
 	public Book(String title) {
 		this.title = title;
 	}
+
+	public Book() {	}
 
 	public String getTitle() {
 		return title;
@@ -23,19 +31,59 @@ public class Book implements Serializable {
 		this.title = title;
 	}
 
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
-
 	public Calendar getReleaseDate() {
 		return releaseDate;
 	}
 
 	public void setReleaseDate(Calendar releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+
+	public List<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getShelf() {
+		return shelf;
+	}
+
+	public void setShelf(int shelf) {
+		this.shelf = shelf;
 	}
 }
