@@ -17,6 +17,10 @@ a, a:hover, a:visited {
     color: #123;
 }
 
+form {
+    margin-bottom: 0;
+}
+
 #heading {
     position: absolute;
     font-size: 2em;
@@ -58,6 +62,14 @@ a, a:hover, a:visited {
     color: #222;
 }
 
+.inputGeneric:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.0));
+}
+
+.inputGeneric:focus {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.0));
+}
+
 .inputWrong {
     border: solid #f22 1px !important;
 }
@@ -75,14 +87,15 @@ a, a:hover, a:visited {
 }
 
 .btnGeneric {
-    border: 1px solid #bbb;
+    border: 1px solid #ccc;
     border-radius: 2px;
     padding: 5px;
-    background: #ccc linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.05));
+    background: #ddd linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.06));
     color: #000;
     font-size: 9pt;
     font-weight: bold;
     text-decoration: none;
+    margin: 2px;
 }
 
 .btnGeneric:hover {
@@ -130,7 +143,7 @@ a, a:hover, a:visited {
     width: 100%;
     display: inline-block;
     text-align: center;
-    margin-top: -6px;
+    margin-top: 10px;
 }
 
 #spanLogin {
@@ -151,10 +164,10 @@ a, a:hover, a:visited {
 .logicalGroup {
     display: block;
     border: solid #eee 1px;
-    background: #eee linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.0));
+    background: #eee linear-gradient(to bottom, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.0));
     padding: 10px;
     margin: 10px 2px 10px 2px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .authors {

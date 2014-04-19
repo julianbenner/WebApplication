@@ -93,4 +93,14 @@
         <servlet-name>Browse</servlet-name>
         <url-pattern>/browse.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Lend</servlet-name>
+        <servlet-class>servlets.Lend</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Lend</servlet-name>
+        <url-pattern>/lend.do</url-pattern>
+    </servlet-mapping>
 </web-app>

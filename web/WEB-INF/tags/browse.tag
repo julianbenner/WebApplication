@@ -22,8 +22,8 @@
 </jsp:attribute>
     <jsp:body>
         <div class="logicalGroup">
-            <form method="GET" autocomplete="off" action="browse.do?action=books" style="margin-bottom: 0">
-                <table>
+            <form method="GET" autocomplete="off" action="browse.do?action=books">
+            <table>
                     <tr>
                         <td><input class="inputGeneric" placeholder="Title" id="title" name="title"
                                    value="<c:out value="${titleSearch}" />"/></td>

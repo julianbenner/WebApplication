@@ -14,6 +14,14 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Login extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Status status = new Status();
+		status.setStatusType(StatusType.INFORMATION);
+		status.setStatus("Please log in using a POST request.");
+		request.setAttribute("status", status);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
