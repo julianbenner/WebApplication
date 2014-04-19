@@ -1,7 +1,10 @@
 package servlets;
 
 import main.*;
-import servlets.models.*;
+import servlets.models.AddAuthor;
+import servlets.models.AddBook;
+import servlets.models.Change;
+import servlets.models.Fetch;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,28 +18,31 @@ import java.util.List;
 
 public class AdminCP extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		processReguest(request, response);
+		processRequest(request, response);
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		processReguest(request, response);
+		processRequest(request, response);
 	}
 
-	public void processReguest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User)request.getSession().getAttribute("user");
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User userObj = (User) request.getSession().getAttribute("user");
 		RequestDispatcher view;
-		String status = "";
-		if(userObj == null) {
-			status = "Please log in first.";
-			view = request.getRequestDispatcher("index.jsp");
+		Status status = new Status();
+		if (userObj == null) {
+			status.setStatus("Please log in first.");
+			status.setStatusType(StatusType.FAIL);
+			request.setAttribute("status", status);
+			view = request.getRequestDispatcher("admin_overview.jsp");
 		} else {
 			String action = request.getParameter("action");
-			if(action == null)
+			if (action == null)
 				action = "";
 			String title = request.getParameter("title");
 			String[] authors = request.getParameterValues("author");
 			String isbn = request.getParameter("isbn");
 			String publisher = request.getParameter("publisher");
+			boolean available = request.getParameter("available") != null ? request.getParameter("available").equals("on") : false;
 			String description = request.getParameter("description");
 			String surname = request.getParameter("surname");
 			String firstname = request.getParameter("firstname");
@@ -44,13 +50,14 @@ public class AdminCP extends HttpServlet {
 			Author author;
 			Book book;
 			List<Integer> authorsInt;
+			view = null;
 			switch (action) {
 				case "addbook":
 					view = request.getRequestDispatcher("add_book.jsp");
 					break;
 				case "addbook2":
 					authorsInt = new ArrayList<>();
-					for(String authorIterator: authors) {
+					for (String authorIterator : authors) {
 						try {
 							authorsInt.add(Integer.parseInt(authorIterator));
 						} catch (NumberFormatException e) {
@@ -93,23 +100,23 @@ public class AdminCP extends HttpServlet {
 				case "changebook":
 					try {
 						book = Fetch.getBook(Integer.parseInt(idString));
-					} catch (SQLException e) {
-						book = new Book();
-						e.printStackTrace();
+						request.setAttribute("book", book);
+						view = request.getRequestDispatcher("change_book.jsp");
+					} catch (SQLException | NumberFormatException e) {
+						response.sendRedirect("browse.do");
+						return;
 					}
-					request.setAttribute("book", book);
-					view = request.getRequestDispatcher("change_book.jsp");
 					break;
 				case "changebook2":
 					authorsInt = new ArrayList<>();
-					for(String authorIterator: authors) {
+					for (String authorIterator : authors) {
 						try {
 							authorsInt.add(Integer.parseInt(authorIterator));
 						} catch (NumberFormatException e) {
 							e.printStackTrace();
 						}
 					}
-					book = Change.changeBook(Integer.parseInt(idString), title, authorsInt, isbn, publisher, description);
+					book = Change.changeBook(Integer.parseInt(idString), title, authorsInt, isbn, publisher, available, description);
 					request.setAttribute("book", book);
 					view = request.getRequestDispatcher("change_book.jsp");
 					break;

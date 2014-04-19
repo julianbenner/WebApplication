@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -13,10 +13,13 @@
       <p id="copyright"></p>
     </jsp:attribute>
     <jsp:body>
-        <form method="POST" action="register.do">
-            <div class="input"><input name="name" /><br />User name</div>
-            <div class="input"><input name="password" type="password" /><br />Password</div>
-            <input type="submit" />
+        <div class="logicalGroup">
+            <form method="POST" action="register.do">
+                <input class="inputGeneric" placeholder="User name" name="name" type="text" required="required"
+                       pattern="^[a-z\d\.]{5,}$"/><br/>
+                <input class="inputGeneric" placeholder="Password" name="password" required="required" type="password"/><br/>
+                <t:button label="Register" link="submit" type="btnSubmit"/>
         </form>
+        </div>
     </jsp:body>
 </t:genericpage>

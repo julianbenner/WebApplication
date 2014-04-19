@@ -3,9 +3,9 @@
  */
 function searchAuthors() {
     query = $("#author_search_input").val();
-    $.post("search_authors.do", { query: query } )
-        .done(function(data) {
-            $("#author_search").html( data );
+    $.post("search_authors.do", { query: query })
+        .done(function (data) {
+            $("#author_search").html(data);
         });
 }
 

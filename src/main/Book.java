@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * Created by Julian on 05/03/14.
- */
 public class Book implements Serializable {
 	private int id;
 	private String title;
@@ -14,14 +11,12 @@ public class Book implements Serializable {
 	private Calendar releaseDate;
 	private String isbn;
 	private String publisher;
+	private boolean available;
 	private String description;
 	private int shelf;
 
-	public Book(String title) {
-		this.title = title;
+	public Book() {
 	}
-
-	public Book() {	}
 
 	public String getTitle() {
 		return title;
@@ -85,5 +80,13 @@ public class Book implements Serializable {
 
 	public void setShelf(int shelf) {
 		this.shelf = shelf;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
 	}
 }

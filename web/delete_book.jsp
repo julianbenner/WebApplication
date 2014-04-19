@@ -9,14 +9,17 @@
       User Control Panel
     </jsp:attribute>
     <jsp:attribute name="header">
-        <c:if test="${user.group == 1 || user.group == 2}"><a
-                href="admincp.do?action=changebook&id=<c:out value="${book.id}" />">Edit book</a> | <a
-                href="delete_book.do?id=<c:out value="${book.id}" />">Delete book</a></c:if>
+        <a href="admincp.do?action=changebook&id=<c:out value="${book.id}" />">Edit book</a>
     </jsp:attribute>
     <jsp:attribute name="footer">
 
     </jsp:attribute>
     <jsp:body>
+        <t:question message="You're about to delete the following book. This process can't be undone. Are you sure?">
+            <t:button label="Yes, delete" link="?id=${book.id}&confirm=1" type="btnNegative"/>
+            <t:button label="No, keep" link="book.do?id=${book.id}"/>
+        </t:question>
+        <br/>
         <t:bookdetail book="${book}"/>
     </jsp:body>
 </t:genericpage>

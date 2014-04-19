@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2201537386">
-    <data-source source="LOCAL" name="Oracle - JBENNER" uuid="63fb3b37-4a0c-4d78-a7e0-36a26a1d5bcf">
-      <driver-ref>oracle</driver-ref>
-      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
-      <jdbc-url>jdbc:oracle:thin:@crusstuora1.staffs.ac.uk:1521:stora</jdbc-url>
-      <user-name>JBENNER</user-name>
-      <user-password>dfe0dfe8dfefdfe4dfe4dfefdff8</user-password>
-      <table-pattern>jbenner</table-pattern>
-      <libraries>
-        <library>
-          <url>file://$PROJECT_DIR$/../ojdbc7.jar</url>
-        </library>
-      </libraries>
-    </data-source>
-    <data-source source="LOCAL" name="Derby - myDatabase2;user=julian;password=julian" uuid="16367af6-1c5c-4c0c-81f1-0d6c35ab497d">
-      <driver-ref>derby.embedded</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby:myDatabase2;user=julian;password=julian</jdbc-url>
-      <libraries />
-    </data-source>
-    <data-source source="LOCAL" name="Derby - myDatabase@localhost" uuid="b2b777c1-4118-4d9f-acda-a8a11e62e035">
+  <component name="DataSourceManagerImpl" format="xml" hash="2537289620">
+    <data-source source="LOCAL" name="Derby - doge@localhost" uuid="be989051-ed3a-4e74-9683-dabfb2ca4820">
       <driver-ref>derby.remote</driver-ref>
       <synchronize>true</synchronize>
-      <auto-commit>false</auto-commit>
       <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby://localhost:3301/myDatabase</jdbc-url>
+      <jdbc-url>jdbc:derby://localhost:3301/doge</jdbc-url>
       <libraries />
     </data-source>
   </component>

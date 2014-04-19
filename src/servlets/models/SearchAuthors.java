@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchAuthors {
-	private static Connection connection = DBConnection.getConnection();
+	private static final Connection connection = DBConnection.getConnection();
 
 	public static List<Author> searchAuthors(String query) throws SQLException {
 		PreparedStatement stmnt = connection.prepareStatement("SELECT * FROM Authors WHERE UPPER(surname) LIKE UPPER(?)");
 		stmnt.setString(1, query);
 		ResultSet rs = stmnt.executeQuery();
 		List<Author> authors = new ArrayList<>();
-		while(rs.next()) {
+		while (rs.next()) {
 			Author author = new Author();
 			author.setSurname(rs.getString("surname"));
 			author.setFirstname(rs.getString("firstname"));

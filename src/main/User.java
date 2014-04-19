@@ -1,11 +1,14 @@
 package main;
 
-public class User {
-	String name;
-	int group;
-	int id;
+import java.io.Serializable;
 
-	public User() {	}
+public class User implements Serializable {
+	private String name;
+	private int group;
+	private int id;
+
+	public User() {
+	}
 
 	public String getName() {
 		return name;
@@ -31,4 +34,7 @@ public class User {
 		this.group = group;
 	}
 
+	public boolean isAdmin() {
+		return (this.group == 1 || this.group == 2);
+	}
 }

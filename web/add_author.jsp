@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -16,12 +16,12 @@
         <div>
             <form method="POST" action="admincp.do?action=addauthor2">
                 <div class="logicalGroup">
-                    <span class="emphasis">Surname</span><br />
-                    <input class="inputGeneric" name="surname" /><br />
-                    <span class="emphasis">First name</span><br />
-                    <input class="inputGeneric" name="firstname" /><br />
+                    <span class="emphasis">Surname</span><br/>
+                    <input class="inputGeneric" name="surname"/><br/>
+                    <span class="emphasis">First name</span><br/>
+                    <input class="inputGeneric" name="firstname"/><br/>
                 </div>
-                <input type="submit" class="btnGeneric" value="Save" />
+                <input type="submit" class="btnGeneric" value="Save"/>
             </form>
         </div>
     </jsp:body>

@@ -1,6 +1,7 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="id" class="java.lang.Integer"/>
 
 <t:genericpage>
     <jsp:attribute name="header">
@@ -10,7 +11,7 @@
       <p id="copyright"></p>
     </jsp:attribute>
     <jsp:body>
-        You were registered as user <c:out value="${id}" />.<br /><br />
+        You were registered as user <c:out value="${id}"/>.<br /><br />
         <a href="index.jsp">Return</a>
     </jsp:body>
 </t:genericpage>

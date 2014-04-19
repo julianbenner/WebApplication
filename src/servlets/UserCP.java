@@ -1,27 +1,28 @@
 package servlets;
 
+import main.ChangeUserResult;
+import main.Status;
+import main.StatusType;
+import main.User;
+import servlets.models.ChangeUser;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import main.*;
-import servlets.models.ChangeUser;
-
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
-/**
- * Created by Julian on 09/02/14.
- */
 public class UserCP extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User)request.getSession().getAttribute("user");
+		User userObj = (User) request.getSession().getAttribute("user");
 		ChangeUserResult result;
-		String status = "Changes were applied. If inputs are red, check and re-submit them.";
-		if(userObj == null) {
-			status = "Please log in first.";
+		Status status = new Status();
+		status.setStatus("Changes were applied. If inputs are red, check and re-submit them.");
+		status.setStatusType(StatusType.INFORMATION);
+		if (userObj == null) {
+			status.setStatus("Please log in first.");
+			status.setStatusType(StatusType.FAIL);
 			result = null;
 		} else {
 			request.getSession().setAttribute("user", userObj);
@@ -40,18 +41,13 @@ public class UserCP extends HttpServlet {
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User)request.getSession().getAttribute("user");
+		User userObj = (User) request.getSession().getAttribute("user");
 		String status = "";
-		if(userObj == null) {
+		if (userObj == null) {
 			status = "Please log in first.";
 		} else {
 			request.getSession().setAttribute("user", userObj);
 			request.setAttribute("userObj", userObj);
-			try {
-				request.setAttribute("addresses", ChangeUser.getAddresses(userObj));
-			} catch (SQLException e) {
-				request.setAttribute("addresses", new ArrayList<Address>());
-			}
 		}
 		request.setAttribute("status", status);
 		RequestDispatcher view = request.getRequestDispatcher("usercp.jsp");

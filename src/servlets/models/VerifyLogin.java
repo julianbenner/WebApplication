@@ -1,16 +1,17 @@
 package servlets.models;
 
+import main.DBConnection;
+import main.PasswordHash;
+import main.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import main.*;
 
-/**
- * Created by Julian on 09/02/14.
- */
 public class VerifyLogin {
-	private static Connection connection = DBConnection.getConnection();
+	private static final Connection connection = DBConnection.getConnection();
+
 	public static User verifyLogin(String name, String password) {
 		//HttpSession session = null;
 		User userObj = null;
@@ -18,10 +19,10 @@ public class VerifyLogin {
 			PreparedStatement stmnt = connection.prepareStatement("SELECT * FROM Users WHERE name = ?");
 			stmnt.setString(1, name);
 			ResultSet rs = stmnt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				String hash = rs.getString("hash");
 				try {
-					if(PasswordHash.validatePassword(password, hash)) {
+					if (PasswordHash.validatePassword(password, hash)) {
 						userObj = new User();
 						userObj.setName(rs.getString("name"));
 						userObj.setId(rs.getInt("id"));

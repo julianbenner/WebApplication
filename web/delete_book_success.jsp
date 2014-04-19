@@ -4,12 +4,15 @@
 
 <t:genericpage>
     <jsp:attribute name="title">
-        Index
+      Book deletion
+    </jsp:attribute>
+    <jsp:attribute name="header">
+
     </jsp:attribute>
     <jsp:attribute name="footer">
-      <p id="copyright"></p>
+
     </jsp:attribute>
     <jsp:body>
-        <t:information message="You need to log in to use this site properly!"/>
+        <t:success message="The book was successfully deleted!"/>
     </jsp:body>
 </t:genericpage>

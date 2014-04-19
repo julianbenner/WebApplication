@@ -2,28 +2,29 @@ package main;
 
 import org.apache.derby.jdbc.EmbeddedDriver;
 
-import java.sql.*;
-/**
- * Created by Julian on 09/02/14.
- */
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class DBConnection {
-    private static Connection connection;
-    private static Driver driver = new EmbeddedDriver();
+	private static final Driver driver = new EmbeddedDriver();
+	private static Connection connection;
 	private static String username = "";
 	private static String password = "";
 	private static boolean isConnected = false;
 
 	public static Connection getConnection() {
-		if(!isConnected)
+		if (!isConnected)
 			openConnection();
 		return connection;
 	}
 
-	public static boolean openConnection()
-	{
+	private static boolean openConnection() {
 		try {
 			DriverManager.registerDriver(driver);
-			connection = DriverManager.getConnection("jdbc:derby://localhost:3301/myDatabase");
+			connection = DriverManager.getConnection("jdbc:derby://localhost:3301/doge");
+			isConnected = true;
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -31,11 +32,11 @@ public class DBConnection {
 		}
 	}
 
-	public static boolean closeConnection()
-	{
+	public static boolean closeConnection() {
 		try {
 			connection.close();
 			DriverManager.deregisterDriver(driver);
+			isConnected = false;
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
