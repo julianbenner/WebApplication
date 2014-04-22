@@ -68,6 +68,11 @@
                 <jsp:invoke fragment="notificationBody"/>
             </t:information>
         </c:when>
+        <c:when test="${status.statusType == 'QUESTION'}">
+            <t:question message="${status.status}">
+                <jsp:invoke fragment="notificationBody"/>
+            </t:question>
+        </c:when>
         <c:otherwise></c:otherwise>
     </c:choose>
     <jsp:doBody/>

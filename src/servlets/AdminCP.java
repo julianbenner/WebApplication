@@ -42,7 +42,7 @@ public class AdminCP extends HttpServlet {
 			String[] authors = request.getParameterValues("author");
 			String isbn = request.getParameter("isbn");
 			String publisher = request.getParameter("publisher");
-			boolean available = request.getParameter("available") != null ? request.getParameter("available").equals("on") : false;
+			boolean available = request.getParameter("available") != null && request.getParameter("available").equals("on");
 			String description = request.getParameter("description");
 			String surname = request.getParameter("surname");
 			String firstname = request.getParameter("firstname");
