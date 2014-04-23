@@ -103,4 +103,14 @@
         <servlet-name>Lend</servlet-name>
         <url-pattern>/lend.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Unlend</servlet-name>
+        <servlet-class>servlets.Unlend</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Unlend</servlet-name>
+        <url-pattern>/unlend.do</url-pattern>
+    </servlet-mapping>
 </web-app>

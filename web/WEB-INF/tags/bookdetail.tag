@@ -12,8 +12,16 @@
     <span class="title"><c:out value="${book.title}"/> (<c:out value="${book.publisher}"/>)</span>
 </div>
 <div class="logicalGroup">
-    ISBN: <c:out value="${book.isbn}"/>
+
+    <c:choose> <c:when test="${book.available}">
+        This book is currently available!
+    </c:when> <c:otherwise>
+        Sorry, currently not available</c:otherwise>
+    </c:choose>
     <hr/>
-    Description<br/>
+    <span class="smallEmphasis">Isbn</span><br/>
+    <c:out value="${book.isbn}"/>
+    <hr/>
+    <span class="smallEmphasis">Description</span><br/>
     <c:out value="${book.description}"/>
 </div>

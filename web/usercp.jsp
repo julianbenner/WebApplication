@@ -2,7 +2,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="userObj" class="main.User" scope="request"/>
-<jsp:useBean id="result" class="main.ChangeUserResult" scope="request"/>
 
 <t:genericpage>
     <jsp:attribute name="title">

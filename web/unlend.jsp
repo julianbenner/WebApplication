@@ -4,16 +4,13 @@
 
 <t:genericpage>
     <jsp:attribute name="title">
-        Index
+        Unlend
     </jsp:attribute>
     <jsp:attribute name="footer">
       <p id="copyright"></p>
     </jsp:attribute>
     <jsp:attribute name="notificationBody">
-        <c:if test="${status.statusType != 'FAIL'}">
-            <t:button label="Sounds good!" link="book.do?id=${bookId}" type="btnSubmit"/>
-            <t:button label="Undo" link="unlend.do?id=${lendId}"/>
-        </c:if>
+            <t:button label="Browse" link="browse.do" type="btnSubmit"/>
     </jsp:attribute>
     <jsp:body>
     </jsp:body>
