@@ -16,7 +16,7 @@
     </jsp:attribute>
     <jsp:body>
         <t:bookdetail book="${book}"/>
-        <div style="margin-top: 10px">
+        <div id="buttonsFoot">
         <t:button label="Lend" link="lend.do?id=${book.id}" type="btnSubmit"/>
         <c:if test="${user.group == 1 || user.group == 2}">
             <t:button label="Edit" link="admincp.do?action=changebook&id=${book.id}"/>

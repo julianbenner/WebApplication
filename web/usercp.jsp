@@ -35,7 +35,7 @@
                                    class="inputGeneric<c:if test="${not empty result}"><c:if test="${result.isNewPasswordsDontMatch()}"> inputWrong</c:if></c:if>"
                                    placeholder="New password (confirm)" name="newPw2"/><br/>
                         </div>
-                        <input type="submit" class="btnGeneric" value="Save"/>
+                        <div id="buttonsFoot"><t:button label="Save" link="submit" type="btnSubmit"></t:button></div>
                     </form>
                 </div>
             </c:when>
