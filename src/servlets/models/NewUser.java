@@ -21,7 +21,7 @@ public class NewUser {
 				id = -2;
 				throw new InputMismatchException();
 			}
-			PreparedStatement stmnt = connection.prepareStatement("INSERT INTO Users(name, hash, usergroup) VALUES (?, ?, 2)");
+			PreparedStatement stmnt = connection.prepareStatement("INSERT INTO Users(name, hash, usergroup) VALUES (?, ?, 3)");
 			stmnt.setString(1, name);
 			stmnt.setString(2, PasswordHash.createHash(password));
 			stmnt.executeUpdate();

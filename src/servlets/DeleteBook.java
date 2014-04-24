@@ -1,9 +1,6 @@
 package servlets;
 
-import main.Book;
-import main.Status;
-import main.StatusType;
-import main.User;
+import main.*;
 import servlets.models.Delete;
 import servlets.models.Fetch;
 
@@ -26,30 +23,35 @@ public class DeleteBook extends HttpServlet {
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User userObj = (User) request.getSession().getAttribute("user");
 		Status status = new Status();
-		int id = -1;
-		try {
-			id = Integer.parseInt(request.getParameter("id"));
-			request.setAttribute("book", Fetch.getBook(id));
-		} catch (Exception e) {
-			request.setAttribute("book", new Book());
-			status.setStatus("No or wrong book ID!");
-			status.setStatusType(StatusType.FAIL);
-		}
-		request.setAttribute("user", userObj);
-		request.setAttribute("status", status);
 		RequestDispatcher view;
-		view = request.getRequestDispatcher("index.jsp");
-		if (userObj.isAdmin()) {
-			String asd = request.getParameter("confirm");
-			if (request.getParameter("confirm") != null && request.getParameter("confirm").equals("1")) {
-				if (Delete.deleteBook(id))
+		int id = -1;
+		if (userObj != null && userObj.isAdmin()) {
+			try {
+				id = Integer.parseInt(request.getParameter("id"));
+				request.setAttribute("book", Fetch.getBook(id));
+			} catch (Exception e) {
+				request.setAttribute("book", new Book());
+				status.setStatus("No or wrong book ID!");
+				status.setStatusType(StatusType.FAIL);
+			}
+			String token = request.getParameter("token"); // get token from GET/POST
+			if (token == null || !token.equals(Token.getToken(request.getSession()))) {
+				token = Token.getToken(request.getSession());
+				request.setAttribute("token", token);
+				view = request.getRequestDispatcher("delete_book.jsp");
+			} else { // does token correspond to user?
+				if (Delete.deleteBook(id)) // if so, try to delete book
 					view = request.getRequestDispatcher("delete_book_success.jsp");
 				else
 					view = request.getRequestDispatcher("delete_book_failed.jsp");
-			} else {
-				view = request.getRequestDispatcher("delete_book.jsp");
 			}
+		} else {
+			status.setStatus("You need to be logged in as admin to do this.");
+			status.setStatusType(StatusType.FAIL);
+			view = request.getRequestDispatcher("index.jsp");
 		}
+		request.setAttribute("user", userObj);
+		request.setAttribute("status", status);
 		view.forward(request, response);
 	}
 }

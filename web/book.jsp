@@ -16,10 +16,12 @@
     </jsp:attribute>
     <jsp:body>
         <t:bookdetail book="${book}"/>
+        <div style="margin-top: 10px">
         <t:button label="Lend" link="lend.do?id=${book.id}" type="btnSubmit"/>
         <c:if test="${user.group == 1 || user.group == 2}">
             <t:button label="Edit" link="admincp.do?action=changebook&id=${book.id}"/>
             <t:button label="Delete" link="delete_book.do?id=${book.id}" type="btnNegative"/>
         </c:if>
+        </div>
     </jsp:body>
 </t:genericpage>

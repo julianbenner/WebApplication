@@ -10,6 +10,6 @@
       <p id="copyright"></p>
     </jsp:attribute>
     <jsp:body>
-        <t:information message="You need to log in to use this site properly!"/>
+        Welcome to Doge Library!
     </jsp:body>
 </t:genericpage>

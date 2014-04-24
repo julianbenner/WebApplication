@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="user" class="main.User" scope="request"/>
 <jsp:useBean id="book" class="main.Book" scope="request"/>
+<jsp:useBean id="token" class="java.lang.String" scope="request"/>
 
 <t:genericpage>
     <jsp:attribute name="title">
@@ -16,7 +17,7 @@
     </jsp:attribute>
     <jsp:body>
         <t:question message="You're about to delete the following book. This process can't be undone. Are you sure?">
-            <t:button label="Yes, delete" link="?id=${book.id}&confirm=1" type="btnNegative"/>
+            <t:button label="Yes, delete" link="?id=${book.id}&token=${token}" type="btnNegative"/>
             <t:button label="No, keep" link="book.do?id=${book.id}"/>
         </t:question>
         <br/>

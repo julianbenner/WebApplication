@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Logout extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().setAttribute("user", null);
-		response.sendRedirect(request.getHeader("referer"));
+		request.getSession().invalidate();
+		response.sendRedirect("index.jsp");
 	}
 }
