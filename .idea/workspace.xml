@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e8fca58-d723-4006-9c2d-34161823a24f" name="Default" comment="Started implementing token checks (only done for DeleteBook); visual improvements">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/WebApplication_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/derby.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_servlet_jsp_jstl_1_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\dataSources.ids" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\dataSources.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Julian\IdeaProjects\WebApplication\.idea\webContexts.xml" afterPath="" />
     </list>
     <ignored path="WebApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -446,6 +462,7 @@
       <recent name="main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Julian\IdeaProjects\WebApplication" />
       <recent name="C:\Users\Julian\Downloads\WebApplication\web" />
       <recent name="C:\Users\Julian\Downloads\WebApplication" />
       <recent name="C:\Users\Julian\Downloads\WebApplication\src" />
@@ -677,7 +694,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32142857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32142857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3365801" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23773988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -691,7 +708,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27985075" sideWeight="0.49839228" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27985075" sideWeight="0.49839228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.6395101" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
