@@ -15,11 +15,17 @@ import java.io.IOException;
 
 public class UserCP extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User userObj = (User) request.getSession().getAttribute("user");
 		ChangeUserResult result;
 		Status status = new Status();
-		status.setStatus("Changes were applied. If inputs are red, check and re-submit them.");
-		status.setStatusType(StatusType.INFORMATION);
 		if (userObj == null) {
 			status.setStatus("Please log in first.");
 			status.setStatusType(StatusType.FAIL);
@@ -32,24 +38,17 @@ public class UserCP extends HttpServlet {
 			String newPw = request.getParameter("newPw");
 			String newPw2 = request.getParameter("newPw2");
 
-			result = ChangeUser.changeUser(userObj.getName(), oldPw, newPw, newPw2);
+			if (oldPw != null && newPw != null && newPw2 != null) {
+				status.setStatus("Changes were applied. If inputs are red, check and re-submit them.");
+				status.setStatusType(StatusType.INFORMATION);
+				result = ChangeUser.changeUser(userObj.getName(), oldPw, newPw, newPw2);
+				request.setAttribute("result", result);
+			} else {
+				result = new ChangeUserResult(false, false);
+			}
 		}
 		request.setAttribute("status", status);
 		request.setAttribute("result", result);
-		RequestDispatcher view = request.getRequestDispatcher("usercp.jsp");
-		view.forward(request, response);
-	}
-
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User) request.getSession().getAttribute("user");
-		String status = "";
-		if (userObj == null) {
-			status = "Please log in first.";
-		} else {
-			request.getSession().setAttribute("user", userObj);
-			request.setAttribute("userObj", userObj);
-		}
-		request.setAttribute("status", status);
 		RequestDispatcher view = request.getRequestDispatcher("usercp.jsp");
 		view.forward(request, response);
 	}

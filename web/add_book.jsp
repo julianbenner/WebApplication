@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="emptyBook" class="main.Book" scope="request"/>
 
 <t:genericpage>
     <jsp:attribute name="title">
@@ -24,19 +25,7 @@
     <jsp:body>
         <div>
             <form method="POST" action="admincp.do?action=addbook2">
-                <div class="logicalGroup">
-                    <span class="emphasis">Title</span><br/>
-                    <input class="inputGeneric" name="title"/><br/>
-                </div>
-                <div class="logicalGroup" id="authors">
-                    <span class="emphasis">Authors</span><br/>
-                    <input class="inputGeneric" id="author_search_input" autocomplete="off"/><a href="#"
-                                                                                                onclick="searchAuthors();return false;">Search</a><br/>
-
-                    <div id="author_search" class="logicalGroup">
-
-                    </div>
-                </div>
+                <t:bookeditable book="${emptyBook}"/>
                 <input type="submit" class="btnGeneric" value="Save"/>
             </form>
         </div>

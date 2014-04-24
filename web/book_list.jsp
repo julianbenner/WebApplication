@@ -3,7 +3,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:forEach items="${authors}" var="current">
-    <a href="#" onclick="addAuthor(<c:out value="${current.id}"/>, '<c:out value="${current.surname}"/>, <c:out
-            value="${current.firstname}"/>');return false;"><c:out value="${current.surname}"/>, <c:out
-            value="${current.firstname}"/></a><br/>
+    <t:button label="Add" link="#" type="btnSmall btnPositive"
+              onclick="addAuthor('${current.id}','${current.surname}, ${current.firstname}');return false;"/>
+    <c:out value="${current.surname}"/>, <c:out value="${current.firstname}"/>
+    <br/>
 </c:forEach>

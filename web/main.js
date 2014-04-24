@@ -10,5 +10,5 @@ function searchAuthors() {
 }
 
 function addAuthor(id, name) {
-    $("#authors").append("<span>" + name + '<input type="hidden" name="author" value="' + id + '"/> <a href="#" onclick="$(this).parent().remove();return false;">Remove</a></span><br />');
+    $("#authors").append('<span><a href="#" onclick="$(this).parent().remove();return false;" class="btnGeneric btnSmall btnNegative">Del</a> ' + name + '<input type="hidden" name="author" value="' + id + '"/><br /></span>');
 }

@@ -53,6 +53,7 @@ public class AdminCP extends HttpServlet {
 			view = null;
 			switch (action) {
 				case "addbook":
+					request.setAttribute("emptyBook", new Book(true));
 					view = request.getRequestDispatcher("add_book.jsp");
 					break;
 				case "addbook2":
@@ -65,11 +66,15 @@ public class AdminCP extends HttpServlet {
 						}
 					}
 					try {
-						AddBook.addBook(title, authorsInt);
+						AddBook.addBook(title, authorsInt, isbn, publisher, available, description);
+						status.setStatus("Book added!");
+						status.setStatusType(StatusType.SUCCESS);
 					} catch (SQLException e) {
 						e.printStackTrace();
+						status.setStatus("Book could not be added!");
+						status.setStatusType(StatusType.FAIL);
 					}
-					view = request.getRequestDispatcher("add_book.jsp");
+					view = request.getRequestDispatcher("admin_overview.jsp");
 					break;
 				case "addauthor":
 					view = request.getRequestDispatcher("add_author.jsp");

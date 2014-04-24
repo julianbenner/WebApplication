@@ -1,6 +1,7 @@
 package main;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -16,6 +17,18 @@ public class Book implements Serializable {
 	private int shelf;
 
 	public Book() {
+	}
+
+	public Book(boolean preinitialized) {
+		if (preinitialized) {
+			title = "";
+			authors = new ArrayList<>();
+			isbn = "";
+			publisher = "";
+			available = false;
+			description = "";
+			shelf = 0;
+		}
 	}
 
 	public String getTitle() {

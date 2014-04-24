@@ -79,7 +79,7 @@ form {
 }
 
 .inputWrong {
-    border: solid #f22 1px !important;
+    border: solid #d44 1px !important;
 }
 
 .inputLogin {
@@ -109,11 +109,17 @@ form {
 .btnGeneric:hover {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.09));
     cursor: default;
+    text-decoration: none;
 }
 
 .btnGeneric:active {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.09));
     cursor: default;
+}
+
+.btnSmall {
+    padding: 1px;
+    margin: 0px;
 }
 
 .btnNegative {
@@ -202,29 +208,29 @@ form {
 }
 
 .success {
-    border: 1px solid #0e8e4e;
-    background-color: #084;
-    background-image: linear-gradient(to bottom, #008844, #008040);
+    border: 1px solid #365;
+    background-color: #275;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.05));
     font-size: 36px;
 }
 
 .fail {
-    border: 1px solid #8e1e0e;
-    background-color: #920;
-    background-image: linear-gradient(to bottom, #992200, #902000);
+    border: 1px solid #522;
+    background-color: #721;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.05));
     font-size: 36px;
 }
 
 .information {
-    border: 1px solid #0e6ebe;
-    background-color: #07c;
-    background-image: linear-gradient(to bottom, #0077cc, #0070c0);
+    border: 1px solid #478;
+    background-color: #27a;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.05));
 }
 
 .question {
-    border: 1px solid #880;
-    background-color: #990;
-    background-image: linear-gradient(to bottom, #999900, #909000);
+    border: 1px solid #478;
+    background-color: #27a;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.05));
 }
 
 .notificationMessage {

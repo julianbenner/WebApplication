@@ -8,9 +8,16 @@ import java.util.List;
 public class AddBook {
 	private static final Connection connection = DBConnection.getConnection();
 
-	public static void addBook(String title, List<Integer> authors) throws SQLException {
-		PreparedStatement stmnt = connection.prepareStatement("INSERT INTO Books(title) VALUES(?)", Statement.RETURN_GENERATED_KEYS);
+	public static void addBook(String title, List<Integer> authors, String isbn, String publisher,
+	                           boolean available, String description) throws SQLException {
+		PreparedStatement stmnt = connection.prepareStatement(
+				"INSERT INTO Books(title, isbn, publisher, available, description) VALUES(?, ?, ?, ?, ?)",
+				Statement.RETURN_GENERATED_KEYS);
 		stmnt.setString(1, title);
+		stmnt.setString(2, isbn);
+		stmnt.setString(3, publisher);
+		stmnt.setBoolean(4, available);
+		stmnt.setString(5, description);
 		stmnt.executeUpdate();
 		ResultSet rs = stmnt.getGeneratedKeys();
 		rs.next();
