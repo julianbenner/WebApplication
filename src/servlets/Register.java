@@ -22,7 +22,7 @@ public class Register extends HttpServlet {
 			status.setStatus("Registration failed");
 			status.setStatusType(StatusType.FAIL);
 		} else if (id == -2) {
-			status.setStatus("Your username may only contain letters and needs to have a length of minimum 5.");
+			status.setStatus("Your username may only contain lower case letters and needs to have a length of minimum 5.");
 			status.setStatusType(StatusType.FAIL);
 		} else {
 			status.setStatus("User " + name + " registered as ID " + id);
@@ -30,8 +30,7 @@ public class Register extends HttpServlet {
 		}
 
 		request.setAttribute("status", status);
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		RequestDispatcher view = request.getRequestDispatcher("empty.jsp");
 		view.forward(request, response);
 	}
 }

@@ -7,7 +7,7 @@
 <div class="logicalGroup">
     <div class="icon <c:out value="${type}" />"><c:out value="${icon}"/></div>
     <div class="notificationMessage"><c:out value="${message}"/></div>
-    <div style="width:706px;margin-left:60px;text-align: center">
+    <div style="width:699px;margin-left:60px;text-align: center">
         <jsp:doBody/>
     </div>
 </div>

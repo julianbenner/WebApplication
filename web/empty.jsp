@@ -4,15 +4,9 @@
 
 <t:genericpage>
     <jsp:attribute name="title">
-      Book deletion
-    </jsp:attribute>
-    <jsp:attribute name="header">
-
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-
+        Doge
     </jsp:attribute>
     <jsp:body>
-        <t:fail message="There was an error deleting the book!"/>
+
     </jsp:body>
 </t:genericpage>

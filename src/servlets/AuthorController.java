@@ -1,10 +1,10 @@
 package servlets;
 
-import main.Book;
 import main.Status;
 import main.StatusType;
 import main.User;
-import servlets.models.Fetch;
+import servlets.models.Author;
+import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class ShowBook extends HttpServlet {
+public class AuthorController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
@@ -23,21 +23,22 @@ public class ShowBook extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User) request.getSession().getAttribute("user");
+		User userObj = VerifyLogin.getUser(request);
 		Status status = new Status();
-		try {
-			int id = Integer.parseInt(request.getParameter("id"));
-			request.setAttribute("book", Fetch.getBook(id));
-		} catch (Exception e) {
-			request.setAttribute("book", new Book());
-			status.setStatusType(StatusType.FAIL);
-			status.setStatus("No or wrong book ID!");
-		}
-		request.setAttribute("user", userObj);
-		request.setAttribute("status", status);
 		RequestDispatcher view;
 
-		view = request.getRequestDispatcher("book.jsp");
+		try {
+			int id = Integer.parseInt(request.getParameter("id"));
+			request.setAttribute("author", Author.get(id));
+			view = request.getRequestDispatcher("author.jsp");
+		} catch (Exception e) {
+			status.setStatusType(StatusType.FAIL);
+			status.setStatus("No or wrong author ID!");
+			view = request.getRequestDispatcher("empty.jsp");
+		}
+
+		request.setAttribute("user", userObj);
+		request.setAttribute("status", status);
 
 		view.forward(request, response);
 	}

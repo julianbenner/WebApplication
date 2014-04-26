@@ -1,16 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@tag description="Detailed book view" pageEncoding="UTF-8" %>
 <%@attribute name="book" required="true" type="main.Book" %>
+<%@attribute name="showTitle" required="false" type="java.lang.Boolean" %>
 
-<div class="logicalGroup">
+<c:if test="${(showTitle != null && showTitle != false) || showTitle}">
+    <div class="logicalGroup">
             <span class="author">
                 <c:forEach items="${book.authors}" var="current">
-                    <a href="<c:out value="${current.id}" />"><c:out value="${current.surname}"/>, <c:out
+                    <a href="author.do?id=<c:out value="${current.id}" />"><c:out value="${current.surname}"/>, <c:out
                             value="${current.firstname}"/></a>
                 </c:forEach>
             </span><br/>
     <span class="title"><c:out value="${book.title}"/> (<c:out value="${book.publisher}"/>)</span>
 </div>
+</c:if>
 <div class="logicalGroup">
 
     <c:choose> <c:when test="${book.available}">

@@ -4,8 +4,8 @@ import main.Book;
 import main.Status;
 import main.StatusType;
 import main.User;
-import servlets.models.Fetch;
-import servlets.models.LendBook;
+import servlets.models.Lending;
+import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,16 +24,16 @@ public class Lend extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User) request.getSession().getAttribute("user");
+		User userObj = VerifyLogin.getUser(request);
 		Status status = new Status();
 		int lendId = 0;
 
 		int id;
 		try {
 			id = Integer.parseInt(request.getParameter("id"));
-			Book book = Fetch.getBook(id);
+			Book book = servlets.models.Book.get(id);
 			request.setAttribute("bookId", book.getId());
-			int[] lendBook = LendBook.lendBook(book, userObj);
+			int[] lendBook = Lending.lendBook(book, userObj);
 			lendId = lendBook[1];
 			int lendBookStatus = lendBook[0];
 			switch (lendBookStatus) {

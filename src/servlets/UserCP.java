@@ -5,6 +5,7 @@ import main.Status;
 import main.StatusType;
 import main.User;
 import servlets.models.ChangeUser;
+import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,7 +24,7 @@ public class UserCP extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User) request.getSession().getAttribute("user");
+		User userObj = VerifyLogin.getUser(request);
 		ChangeUserResult result;
 		Status status = new Status();
 		if (userObj == null) {

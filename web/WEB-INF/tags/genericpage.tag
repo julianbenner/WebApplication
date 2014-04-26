@@ -1,7 +1,6 @@
 <%@tag description="Overall page template" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
 <%@attribute name="title" fragment="true" %>
 <%@attribute name="htmlHeader" fragment="true" %>
@@ -17,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/main.css"/>"/>
     <!--<link rel="stylesheet" type="text/css" href="<c:url value="/doge.css"/>" /> -->
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
     <meta charset="utf-8">
     <jsp:invoke fragment="htmlHeader"/>
@@ -28,10 +28,10 @@
             <div id="heading">
                 <a href="<c:url value="/index.jsp"/>"
                    style="display: inline-block;background: url(doge_medium.png); padding-left: 40px; background-repeat: no-repeat">DogeLibrary</a><br/>
-                <span id="spanSubNav"><a href="browse.do">Browse</a> | <a href="admincp.do">Control
-                    panel</a></span><br/>
-            <span id="spanBreadcrumbs"><a href="<c:url value="/index.jsp"/>">Index</a> <jsp:invoke
-                    fragment="header"/></span>
+                <span id="spanSubNav"><a href="browse.do">Browse</a><c:if test="${sessionScope.user != null}"> | <a
+                        href="lendings.do">Lendings</a><c:if test="${sessionScope.user.isAdmin()}"> | <a
+                        href="admincp.do">Control
+                    panel</a></c:if></c:if></span><br/>
             </div>
             <div id="containerLogin">
                 <c:choose>
@@ -45,7 +45,9 @@
                                    placeholder="Username"/>
                             <input name="password" type="password" class="inputGeneric inputLogin" id="inputPw"
                                    placeholder="Password"/>
-                            <input type="submit" class="btnGeneric" id="btnLogin" value="Login"/>
+                            <input type="submit" class="btnGeneric" id="btnLogin" value="Login"/><br/>
+                            <input type="checkbox" name="staylogin" id="staylogin"/>
+                            <label for="staylogin">Stay logged in</label>
                         </form>
                         <span id="spanRegNot"><a href="register.jsp">not registered yet?</a></span>
                     </c:otherwise>

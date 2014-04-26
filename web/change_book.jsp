@@ -5,13 +5,7 @@
 
 <t:genericpage>
     <jsp:attribute name="title">
-      User Control Panel
-    </jsp:attribute>
-    <jsp:attribute name="header">
-        > <a href="<c:url value="/admincp.do"/>">Control panel</a>
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-
+        Change book
     </jsp:attribute>
     <jsp:attribute name="htmlHeader">
         <script type="text/javascript">
@@ -23,23 +17,14 @@
         </script>
     </jsp:attribute>
     <jsp:body>
-        <c:choose>
-            <c:when test="${sessionScope.user != null}">
-                <div>
-                    <form method="POST" action="?action=changebook2&id=<c:out value="${book.id}" />">
-                        <div class="logicalGroup">
-                            <span class="emphasis">Static information</span><br/>
-                            <span class="emphasis">ID</span> <c:out value="${book.id}"/>
-                        </div>
-                        <t:bookeditable book="${book}"/>
-                        <t:button label="Save" link="submit" type="btnSubmit"/>
-                        <t:button label="Back" link="book.do?id=${book.id}"/>
-                    </form>
-                </div>
-            </c:when>
-            <c:otherwise>
-                <p>Please log in first.</p>
-            </c:otherwise>
-        </c:choose>
+        <form method="POST" action="?id=<c:out value="${book.id}" />">
+            <div class="logicalGroup">
+                <span class="emphasis">Static information</span><br/>
+                <span class="emphasis">ID</span> <c:out value="${book.id}"/>
+            </div>
+            <t:bookeditable book="${book}"/>
+            <div id="buttonsFoot"><t:button label="Save" link="submit" type="btnSubmit"/>
+                <t:button label="Back" link="book.do?id=${book.id}"/></div>
+        </form>
     </jsp:body>
 </t:genericpage>

@@ -6,12 +6,7 @@
     <jsp:attribute name="title">
       Register
     </jsp:attribute>
-    <jsp:attribute name="header">
-      > <a href="<c:url value="/register.jsp"/>">Register</a>
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-      <p id="copyright"></p>
-    </jsp:attribute>
+
     <jsp:body>
         <div class="logicalGroup">
             <form method="POST" action="register.do">
@@ -19,7 +14,7 @@
                        pattern="^[a-z\d\.]{5,}$"/><br/>
                 <input class="inputGeneric" placeholder="Password" name="password" required="required" type="password"/><br/>
                 <t:button label="Register" link="submit" type="btnSubmit"/>
-        </form>
+            </form>
         </div>
     </jsp:body>
 </t:genericpage>

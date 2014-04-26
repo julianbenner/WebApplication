@@ -3,7 +3,6 @@ package servlets;
 import main.Status;
 import main.StatusType;
 import main.User;
-import servlets.models.UnlendBook;
 import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Unlend extends HttpServlet {
+public class BookController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
@@ -25,37 +24,28 @@ public class Unlend extends HttpServlet {
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User userObj = VerifyLogin.getUser(request);
 		Status status = new Status();
+		RequestDispatcher view;
+		boolean ajax = request.getParameter("ajax") != null && request.getParameter("ajax").equals("1");
 
-		int id;
 		try {
-			id = Integer.parseInt(request.getParameter("id"));
-			int unlendBookStatus = UnlendBook.unlendBook(id, userObj);
-			switch (unlendBookStatus) {
-				case 1: // not this particular user's lending
-					status.setStatus("We could not find a lending of yours with this ID.");
-					status.setStatusType(StatusType.FAIL);
-					break;
-				case 2: // SQL or ID error
-					status.setStatus("Sorry, we could not process your request.");
-					status.setStatusType(StatusType.FAIL);
-					break;
-				case 0:
-					status.setStatus("Lending deleted!");
-					status.setStatusType(StatusType.SUCCESS);
-					break;
-				default: // this should never happen
-					status.setStatus("Something unexpected happened.");
-					status.setStatusType(StatusType.INFORMATION);
+			int id = Integer.parseInt(request.getParameter("id"));
+			request.setAttribute("book", servlets.models.Book.get(id));
+			if (ajax) {
+				request.setAttribute("showTitle", false);
+				view = request.getRequestDispatcher("book_ajax.jsp");
+			} else {
+				request.setAttribute("showTitle", true);
+				view = request.getRequestDispatcher("book.jsp");
 			}
 		} catch (Exception e) {
-			status.setStatus("No or wrong lending ID!");
 			status.setStatusType(StatusType.FAIL);
-			e.printStackTrace();
-		}
+			status.setStatus("No or wrong book ID!");
+			view = request.getRequestDispatcher("empty.jsp");
 
+		}
+		request.setAttribute("user", userObj);
 		request.setAttribute("status", status);
-		RequestDispatcher view;
-		view = request.getRequestDispatcher("unlend.jsp");
+
 		view.forward(request, response);
 	}
 }

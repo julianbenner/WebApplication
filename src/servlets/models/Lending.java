@@ -7,6 +7,7 @@ import main.User;
 
 import java.sql.*;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -15,7 +16,7 @@ import java.util.Calendar;
  * @author Julian Benner
  * @version 0.9
  */
-public class LendBook {
+public class Lending {
 	private static final Connection connection = DBConnection.getConnection();
 
 	/**
@@ -54,7 +55,7 @@ public class LendBook {
 	 * @throws SQLException if values are invalid or database connection is not established
 	 */
 	private static int createLending(int bookId, int userId, java.sql.Date lentsince, int duration) throws SQLException {
-		PreparedStatement stmnt = connection.prepareStatement("INSERT INTO Lendings(book_id, user_id, lentsince, duration) VALUES(?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+		PreparedStatement stmnt = connection.prepareStatement("INSERT INTO Lendings(book_id, user_id, lentsince, duration, collected) VALUES(?, ?, ?, ?, false)", Statement.RETURN_GENERATED_KEYS);
 		stmnt.setInt(1, bookId);
 		stmnt.setInt(2, userId);
 		stmnt.setDate(3, lentsince);
@@ -105,5 +106,47 @@ public class LendBook {
 		returnArray[1] = lendId;
 
 		return returnArray;
+	}
+
+	public static ArrayList<main.Lending> getUserLendings(int id) {
+		ArrayList<main.Lending> lendingArrayList = new ArrayList<>();
+		ArrayList<Integer> lendingIdArrayList = new ArrayList<>();
+
+		try {
+			PreparedStatement stmnt = connection.prepareStatement("SELECT id FROM Lendings WHERE user_id = ?");
+			stmnt.setInt(1, id);
+			ResultSet rs = stmnt.executeQuery();
+			while (rs.next()) {
+				lendingIdArrayList.add(rs.getInt("id"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		for (int i : lendingIdArrayList) {
+			lendingArrayList.add(getLending(i));
+		}
+
+		return lendingArrayList;
+	}
+
+	public static main.Lending getLending(int id) {
+		main.Lending lending = new main.Lending();
+
+		try {
+			PreparedStatement stmnt = connection.prepareStatement("SELECT * FROM Lendings WHERE id = ?");
+			stmnt.setInt(1, id);
+			ResultSet rs = stmnt.executeQuery();
+			while (rs.next()) {
+				lending.setId(rs.getInt("id"));
+				lending.setDuration(rs.getInt("duration"));
+				lending.setBook(servlets.models.Book.get(rs.getInt("book_id")));
+				lending.setUser(rs.getInt("user_id"));
+				lending.setDate(rs.getDate("lentsince"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lending;
 	}
 }

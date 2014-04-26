@@ -2,11 +2,13 @@ package servlets;
 
 import main.Status;
 import main.StatusType;
+import main.Token;
 import main.User;
 import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +21,7 @@ public class Login extends HttpServlet {
 		status.setStatusType(StatusType.INFORMATION);
 		status.setStatus("Please log in using a POST request.");
 		request.setAttribute("status", status);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("empty.jsp").forward(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,6 +35,15 @@ public class Login extends HttpServlet {
 			status.setStatusType(StatusType.FAIL);
 		} else {
 			request.getSession().setAttribute("user", userObj);
+			if (request.getParameter("staylogin") != null) {
+				Cookie cookie1 = new Cookie("id", String.valueOf(userObj.getId()));
+				Cookie cookie2 = new Cookie("token", Token.getToken(request.getSession()));
+				cookie1.setMaxAge(60 * 60 * 24);
+				cookie2.setMaxAge(60 * 60 * 24);
+				VerifyLogin.setLoginCookie(userObj.getId(), Token.getToken(request.getSession()));
+				response.addCookie(cookie1);
+				response.addCookie(cookie2);
+			}
 			status.setStatus("Login successful as " + name);
 			status.setStatusType(StatusType.SUCCESS);
 		}

@@ -8,7 +8,13 @@ public class Author implements Serializable {
 	private String firstname;
 
 	public Author() {
+	}
 
+	public Author(boolean preinitialized) {
+		if (preinitialized) {
+			surname = "";
+			firstname = "";
+		}
 	}
 
 	public String getFirstname() {

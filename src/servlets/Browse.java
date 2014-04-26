@@ -1,10 +1,10 @@
 package servlets;
 
-import main.Author;
 import main.Book;
+import main.SearchResult;
 import main.Status;
 import main.User;
-import servlets.models.Search;
+import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Browse extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +25,7 @@ public class Browse extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User userObj = (User) request.getSession().getAttribute("user");
+		User userObj = VerifyLogin.getUser(request);
 		RequestDispatcher view;
 		String action = request.getParameter("action");
 		Status status = new Status();
@@ -36,25 +35,42 @@ public class Browse extends HttpServlet {
 		//String authors = request.getParameterValues("author");
 		String surname = request.getParameter("surname");
 		String firstname = request.getParameter("firstname");
-		Author author;
+		String isbn = request.getParameter("isbn");
+		boolean ajax = request.getParameter("ajax") != null && request.getParameter("ajax").equals("1");
+		int page;
+		try {
+			page = Integer.parseInt(request.getParameter("page"));
+		} catch (Exception e) {
+			page = 1;
+		}
+
 		switch (action) {
 			case "authors":
 				view = request.getRequestDispatcher("add_book.jsp");
 				break;
 			case "books":
 			default:
-				List<Book> books;
+				SearchResult searchResult;
+				ArrayList<Book> books;
 				try {
-					books = Search.searchBook(title, surname, firstname);
+					searchResult = servlets.models.Book.search(title, surname, firstname, page);
 				} catch (SQLException e) {
-					books = new ArrayList<>();
+					searchResult = new SearchResult();
 					e.printStackTrace();
 				}
-				request.setAttribute("books", books);
+				request.setAttribute("searchResult", searchResult);
+				request.setAttribute("user", userObj);
 				request.setAttribute("titleSearch", title);
 				request.setAttribute("surname", surname);
 				request.setAttribute("firstname", firstname);
-				view = request.getRequestDispatcher("browse_books.jsp");
+				request.setAttribute("isbn", isbn);
+				request.setAttribute("showTitle", false);
+
+				if (ajax) {
+					view = request.getRequestDispatcher("browse_books_ajax.jsp");
+				} else {
+					view = request.getRequestDispatcher("browse_books.jsp");
+				}
 		}
 		request.setAttribute("status", status);
 		view.forward(request, response);

@@ -3,7 +3,6 @@ package servlets;
 import main.Status;
 import main.StatusType;
 import main.User;
-import servlets.models.UnlendBook;
 import servlets.models.VerifyLogin;
 
 import javax.servlet.RequestDispatcher;
@@ -12,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
-public class Unlend extends HttpServlet {
+public class AddAuthorController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
@@ -25,37 +25,36 @@ public class Unlend extends HttpServlet {
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User userObj = VerifyLogin.getUser(request);
 		Status status = new Status();
+		RequestDispatcher view;
 
-		int id;
-		try {
-			id = Integer.parseInt(request.getParameter("id"));
-			int unlendBookStatus = UnlendBook.unlendBook(id, userObj);
-			switch (unlendBookStatus) {
-				case 1: // not this particular user's lending
-					status.setStatus("We could not find a lending of yours with this ID.");
-					status.setStatusType(StatusType.FAIL);
-					break;
-				case 2: // SQL or ID error
-					status.setStatus("Sorry, we could not process your request.");
-					status.setStatusType(StatusType.FAIL);
-					break;
-				case 0:
-					status.setStatus("Lending deleted!");
+		String description = request.getParameter("description");
+		String surname = request.getParameter("surname");
+		String firstname = request.getParameter("firstname");
+
+		if (userObj != null && userObj.isAdmin()) {
+			if (surname != null) {
+				try {
+					servlets.models.Author.add(surname, firstname);
+					status.setStatus("Author successfully added!");
 					status.setStatusType(StatusType.SUCCESS);
-					break;
-				default: // this should never happen
-					status.setStatus("Something unexpected happened.");
-					status.setStatusType(StatusType.INFORMATION);
+				} catch (SQLException e) {
+					e.printStackTrace();
+					status.setStatus("Author could not be added!");
+					status.setStatusType(StatusType.FAIL);
+				}
+				view = request.getRequestDispatcher("empty.jsp");
+			} else {
+				request.setAttribute("emptyAuthor", new main.Author(true));
+				view = request.getRequestDispatcher("add_author.jsp");
 			}
-		} catch (Exception e) {
-			status.setStatus("No or wrong lending ID!");
+		} else {
+			status.setStatus("You need to be logged in as admin to do this.");
 			status.setStatusType(StatusType.FAIL);
-			e.printStackTrace();
+			view = request.getRequestDispatcher("empty.jsp");
 		}
 
+		request.setAttribute("user", userObj);
 		request.setAttribute("status", status);
-		RequestDispatcher view;
-		view = request.getRequestDispatcher("unlend.jsp");
 		view.forward(request, response);
 	}
 }

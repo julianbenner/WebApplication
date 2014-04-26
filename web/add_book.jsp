@@ -5,13 +5,7 @@
 
 <t:genericpage>
     <jsp:attribute name="title">
-      Admin Control Panel
-    </jsp:attribute>
-    <jsp:attribute name="header">
-        > <a href="<c:url value="/admincp.do"/>">Control panel</a>
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-
+        Add book
     </jsp:attribute>
     <jsp:attribute name="htmlHeader">
         <script type="text/javascript">
@@ -23,11 +17,9 @@
         </script>
     </jsp:attribute>
     <jsp:body>
-        <div>
-            <form method="POST" action="admincp.do?action=addbook2">
-                <t:bookeditable book="${emptyBook}"/>
-                <input type="submit" class="btnGeneric" value="Save"/>
-            </form>
-        </div>
+        <form method="POST" action="addbook.do">
+            <t:bookeditable book="${emptyBook}"/>
+            <div id="buttonsFoot"><t:button label="Save" link="submit" type="btnSubmit"/></div>
+        </form>
     </jsp:body>
 </t:genericpage>

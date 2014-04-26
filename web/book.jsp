@@ -3,25 +3,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="user" class="main.User" scope="request"/>
 <jsp:useBean id="book" class="main.Book" scope="request"/>
+<jsp:useBean id="showTitle" class="java.lang.Boolean" scope="request"/>
 
 <t:genericpage>
     <jsp:attribute name="title">
-      User Control Panel
+      <c:out value="${book.title}"/>
     </jsp:attribute>
-    <jsp:attribute name="header">
 
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-
-    </jsp:attribute>
     <jsp:body>
-        <t:bookdetail book="${book}"/>
-        <div id="buttonsFoot">
-        <t:button label="Lend" link="lend.do?id=${book.id}" type="btnSubmit"/>
-        <c:if test="${user.group == 1 || user.group == 2}">
-            <t:button label="Edit" link="admincp.do?action=changebook&id=${book.id}"/>
-            <t:button label="Delete" link="delete_book.do?id=${book.id}" type="btnNegative"/>
-        </c:if>
-        </div>
+        <t:book user="${user}" book="${book}" showTitle="${showTitle}"/>
     </jsp:body>
 </t:genericpage>

@@ -46,7 +46,7 @@
 
     <servlet>
         <servlet-name>Book</servlet-name>
-        <servlet-class>servlets.ShowBook</servlet-class>
+        <servlet-class>servlets.BookController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -56,17 +56,27 @@
 
     <servlet>
         <servlet-name>DeleteBook</servlet-name>
-        <servlet-class>servlets.DeleteBook</servlet-class>
+        <servlet-class>servlets.DeleteBookController</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>DeleteBook</servlet-name>
-        <url-pattern>/delete_book.do</url-pattern>
+        <url-pattern>/deletebook.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteAuthor</servlet-name>
+        <servlet-class>servlets.DeleteAuthorController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteAuthor</servlet-name>
+        <url-pattern>/deleteauthor.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>AdminCP</servlet-name>
-        <servlet-class>servlets.AdminCP</servlet-class>
+        <servlet-class>servlets.AdminCPController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -112,5 +122,65 @@
     <servlet-mapping>
         <servlet-name>Unlend</servlet-name>
         <url-pattern>/unlend.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Author</servlet-name>
+        <servlet-class>servlets.AuthorController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Author</servlet-name>
+        <url-pattern>/author.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddAuthor</servlet-name>
+        <servlet-class>servlets.AddAuthorController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddAuthor</servlet-name>
+        <url-pattern>/addauthor.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBook</servlet-name>
+        <servlet-class>servlets.AddBookController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddBook</servlet-name>
+        <url-pattern>/addbook.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeBook</servlet-name>
+        <servlet-class>servlets.ChangeBookController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChangeBook</servlet-name>
+        <url-pattern>/changebook.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeAuthor</servlet-name>
+        <servlet-class>servlets.ChangeAuthorController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChangeAuthor</servlet-name>
+        <url-pattern>/changeauthor.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Lendings</servlet-name>
+        <servlet-class>servlets.LendingsController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Lendings</servlet-name>
+        <url-pattern>/lendings.do</url-pattern>
     </servlet-mapping>
 </web-app>

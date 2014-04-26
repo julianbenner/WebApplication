@@ -7,23 +7,12 @@
     <jsp:attribute name="title">
       Browse
     </jsp:attribute>
-    <jsp:attribute name="header">
 
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-
-    </jsp:attribute>
     <jsp:body>
-        <c:forEach items="${books}" var="book">
-            <div class="logicalGroup">
-                <span class="author">
-                    <c:forEach items="${book.authors}" var="current">
-                        <a href="<c:out value="${current.id}" />"><c:out value="${current.surname}"/>, <c:out
-                                value="${current.firstname}"/></a>
-                    </c:forEach>
-                </span><br/>
-                <span class="title"><a href="book.do?id=<c:out value="${book.id}" />"><c:out value="${book.title}"/></a></span>
+        <div id="results_ajax">
+            <div id="results">
+                <t:results/>
             </div>
-        </c:forEach>
+        </div>
     </jsp:body>
 </t:browse>
