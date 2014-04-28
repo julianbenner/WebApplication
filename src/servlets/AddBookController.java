@@ -38,19 +38,15 @@ public class AddBookController extends HttpServlet {
 
 		if (userObj != null && userObj.isAdmin()) {
 			if (title != null) {
-				try {
+				try { // NumberFormat if wrong authors data, NullPointer if no author data
 					ArrayList<Integer> authorsInt = new ArrayList<>();
 					for (String authorIterator : authors) {
-						try {
-							authorsInt.add(Integer.parseInt(authorIterator));
-						} catch (NumberFormatException e) {
-							e.printStackTrace();
-						}
+						authorsInt.add(Integer.parseInt(authorIterator));
 					}
 					Book.add(title, authorsInt, isbn, publisher, available, description);
 					status.setStatus("Book successfully added!");
 					status.setStatusType(StatusType.SUCCESS);
-				} catch (SQLException e) {
+				} catch (NumberFormatException | NullPointerException | SQLException e) {
 					e.printStackTrace();
 					status.setStatus("Book could not be added!");
 					status.setStatusType(StatusType.FAIL);

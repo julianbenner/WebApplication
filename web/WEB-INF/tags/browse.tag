@@ -40,17 +40,16 @@
     <jsp:body>
         <div class="logicalGroup">
             <form method="GET" autocomplete="off" action="browse.do?action=books" id="searchForm">
-                <table>
+                <table width="100%">
                     <tr>
-                        <td><input class="inputGeneric" placeholder="Title" id="title" name="title"
+                        <td><input class="inputGeneric inputSearch" placeholder="Title" id="title" name="title"
                                    value="<c:out value="${titleSearch}" />"/></td>
-                        <td><input maxlength="13" pattern="97[89][0-9]{10}" class="inputGeneric" placeholder="ISBN-13"
+                        <td><input maxlength="13" pattern="97[89][0-9]{10}" class="inputGeneric inputSearch"
+                                   placeholder="ISBN-13"
                                    name="isbn" id="isbn" value="<c:out value="${isbn}" />"/></td>
-                    </tr>
-                    <tr>
-                        <td><input class="inputGeneric" placeholder="Author first name" name="firstname"
+                        <td><input class="inputGeneric inputSearch" placeholder="Author first name" name="firstname"
                                    id="firstname" value="<c:out value="${firstname}" />"/></td>
-                        <td><input class="inputGeneric" placeholder="Author surname" name="surname"
+                        <td><input class="inputGeneric inputSearch" placeholder="Author surname" name="surname"
                                    id="surname" value="<c:out value="${surname}" />"></td>
                     </tr>
                 </table>

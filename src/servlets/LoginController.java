@@ -15,13 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URL;
 
-public class Login extends HttpServlet {
+public class LoginController extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Status status = new Status();
-		status.setStatusType(StatusType.INFORMATION);
-		status.setStatus("Please log in using a POST request.");
-		request.setAttribute("status", status);
-		request.getRequestDispatcher("empty.jsp").forward(request, response);
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,7 +49,7 @@ public class Login extends HttpServlet {
 	/*	String[] splitReferer = referer.split("/");
 		String filename = splitReferer[splitReferer.length - 1];
 		if (splitReferer.length == 3) filename = "index.jsp";*/
-		RequestDispatcher view = request.getRequestDispatcher("login.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("empty.jsp");
 		request.setAttribute("referer1", referer);
 		view.forward(request, response);
 	}

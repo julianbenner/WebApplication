@@ -3,10 +3,6 @@ html {
     overflow-y: scroll;
 }
 
-body {
-    margin: 0;
-}
-
 a {
     color: #026;
     text-decoration: none;
@@ -28,89 +24,38 @@ hr {
 }
 
 #page {
+    width: 800px;
+    margin: 20px auto;
     border: solid #eee 1px;
     color: #222;
     border-radius: 8px;
     font-family: sans-serif;
+    background-color: #fff;
     font-size: 12pt;
 }
 
-#header {
-    height: 60px;
-    padding: 10px;
-    min-width: 700px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-#bodyWrapper {
-    padding: 0px 10px 10px 10px;
-}
-
-#body {
-    min-width: 600px;
-    max-width: 900px;
-    margin: auto;
-    padding: 104px 24px 24px 24px;
-    border-radius: 0px 0px 10px 10px;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px 0px #e2e2e2;
-}
-
 #pageheader {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
-    box-shadow: 0px 1px 8px 0px #e2e2e2;
-    position: fixed;
-    width: 100%;
+    background: #fff linear-gradient(to bottom, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.0));
+    border-radius: 8px 8px 0px 0px;
+    padding: 16px 16px 8px 16px;
 }
 
-#headLogoContainer {
-    font-size: 33px;
-    line-height: 60px;
-    margin-top: -4px;
-    float: left;
+#heading {
+    position: absolute;
+    font-size: 2em;
 }
 
-#headLogoLink {
-    display: inline-block;
-    background: url(doge_medium.png);
-    padding-left: 40px;
-    background-repeat: no-repeat;
-    background-position-y: center;
-}
-
-#headLogoLink:hover {
-    text-decoration: none;
-}
-
-#headButtons {
-    float: left;
-    margin-left: 10px;
-}
-
-#headLogin {
-    float: right;
-    font-size: 0.8em;
-    height: 60px;
-}
-
-.headButton {
-    padding: 12px 16px 12px 16px;
-    line-height: 60px;
-    background-color: #fff;
-    border-radius: 16px;
-    color: #000;
-    font-size: 16px;
-}
-
-.headButton:hover {
-    text-decoration: none;
-    background-color: #f2f2f2;
+#spanSubNav {
+    font-size: 0.6em;
 }
 
 #spanBreadcrumbs {
     font-size: 0.4em;
     font-style: italic;
+}
+
+#header {
+    height: 80px;
 }
 
 .input {
@@ -128,21 +73,15 @@ hr {
 .inputGeneric {
     border: solid #ccc 1px;
     border-radius: 2px;
-    background: #fff linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.0));
-    padding: 8px;
-    font-size: 11pt;
+    background: #fff linear-gradient(to bottom, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.0));
+    padding: 5px;
+    font-size: 9pt;
     color: #222;
     box-shadow: 0px 1px 1px 0px #eee;
 }
 
-.inputSearch {
-    min-width: 150px;
-    max-width: 212px;
-    width: 100%;
-}
-
 .inputGeneric:hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.0));
 }
 
 .inputGeneric:focus {
@@ -153,30 +92,40 @@ hr {
     border: solid #d44 1px !important;
 }
 
+.inputLogin {
+    width: 100px;
+    height: 20px;
+    font-size: 0.85em;
+    padding: 2px;
+    margin-right: 2px;
+}
+
 #inputPw {
     margin-top: 22px;
 }
 
 .btnGeneric {
-    border: none;
-    border-radius: 6px;
-    padding: 8px;
-    background-color: #f0f0f0;
-    color: #000;
-    font-size: 10pt;
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 5px;
+    background: #888 linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.04));
+    color: #fff;
+    font-size: 9pt;
+    font-weight: bold;
     text-decoration: none;
     margin: 0px 2px 0px 2px;
     display: inline-block;
+    box-shadow: 0px 1px 1px 0px #ddd;
 }
 
 .btnGeneric:hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.08));
     cursor: default;
     text-decoration: none;
 }
 
 .btnGeneric:active {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.09));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.08));
     cursor: default;
 }
 
@@ -186,24 +135,52 @@ hr {
 }
 
 .btnNegative {
-    background-color: #cc8989;
-    color: #fff;
+    border: 1px solid #844;
+    background-color: #955;
+    color: #fff !important;
 }
 
 .btnPositive {
-    background-color: #7aa871;
-    color: #fff;
+    border: 1px solid #373;
+    background-color: #484;
+    color: #fff !important;
 }
 
 .btnSubmit {
-    background-color: #89aacc;
-    color: #fff;
+    border: 1px solid #37a;
+    background-color: #48b;
+    color: #fff !important;
+}
+
+#btnLogin {
+    height: 42px;
+    width: 42px;
+    margin: 0;
+    position: absolute;
+}
+
+#containerLogin {
+    position: absolute;
+    margin-left: 624px;
+    width: 144px;
+    font-size: 0.8em;
+}
+
+#spanRegNot {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #spanLogin {
     text-align: right;
     display: inline-block;
     width: 100%;
+}
+
+#body {
+    padding: 8px 16px 16px 16px;
 }
 
 .emphasis {
@@ -214,8 +191,8 @@ hr {
 .logicalGroup {
     display: block;
     background: #fafafa linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.0));
-    padding: 18px;
-    margin: 18px 0px 0px 0px;
+    padding: 10px;
+    margin: 10px 0px 0px 0px;
     border-radius: 3px;
     box-shadow: 0px 1px 1px 0px #ddd;
 }
@@ -287,15 +264,14 @@ hr {
 }
 
 #buttonsFoot {
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .accordionButton {
     margin-right: 0;
     float: right;
-    height: 30px;
-    line-height: 30px;
-    margin-top: -20px;
+    height: 16px;
+    margin-top: -12px;
     vertical-align: bottom;
     display: block;
 }

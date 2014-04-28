@@ -52,7 +52,7 @@ function searchBooks(page) {
 
 function accordionfy() {
     $(function () {
-        $("#results").accordion({ active: false, collapsible: true, heightStyle: "content", header: ".accordionButton"}/*{
+        $("#results").accordion({ active: false, collapsible: true, heightStyle: "content", header: ".accordionButton", animate: 133}/*{
          active: false,
          activate: function(event, ui){
          var clicked = $(this).find('.ui-state-active').next().attr('id');

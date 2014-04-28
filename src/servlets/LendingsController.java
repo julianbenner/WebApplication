@@ -26,13 +26,45 @@ public class LendingsController extends HttpServlet {
 		Status status = new Status();
 		RequestDispatcher view;
 
+		String action = request.getParameter("action");
+		int id = 0;
+
 		if (userObj != null) {
+			if (action == null || (!action.equals("book") && !action.equals("user") && !action.equals("open"))) {
+				action = "user"; // default to user lendings if no or unknown action given
+			}
 			try {
-				request.setAttribute("lendings", servlets.models.Lending.getUserLendings(userObj.getId()));
-				view = request.getRequestDispatcher("lendings.jsp");
+				id = Integer.parseInt(request.getParameter("id"));
+			} catch (NullPointerException | NumberFormatException e) {
+				if (action.equals("user")) {
+					id = userObj.getId();
+				}
+				e.printStackTrace();
+			}
+			if (!userObj.isAdmin()) {
+				if (action.equals("open")) {
+					action = "user";
+				}
+				if (action.equals("user")) {
+					id = userObj.getId();
+				}
+			}
+			try {
+				if (action.equals("user")) { // user lendings
+					request.setAttribute("lendings", servlets.models.Lending.getUserLendings(id));
+					request.setAttribute("userO", servlets.models.User.get(id));
+					view = request.getRequestDispatcher("lendings_by_user.jsp");
+				} else if (action.equals("book")) { // book lendings
+					request.setAttribute("lendings", servlets.models.Lending.getBookLendings(id));
+					request.setAttribute("book", id);
+					view = request.getRequestDispatcher("lendings_by_book.jsp");
+				} else { // open lendings
+					request.setAttribute("lendings", servlets.models.Lending.getOpenLendings());
+					view = request.getRequestDispatcher("lendings_open.jsp");
+				}
 			} catch (Exception e) {
 				status.setStatusType(StatusType.FAIL);
-				status.setStatus("No or wrong book ID!");
+				status.setStatus("No or wrong ID!");
 				view = request.getRequestDispatcher("empty.jsp");
 
 			}

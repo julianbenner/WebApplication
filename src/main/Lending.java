@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Lending {
 	private int id;
 	private Book book;
-	private int user;
+	private User user;
 	private java.sql.Date date;
 	private int duration;
 
@@ -20,11 +20,11 @@ public class Lending {
 		this.book = book;
 	}
 
-	public int getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(int user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

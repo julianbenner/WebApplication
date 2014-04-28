@@ -25,38 +25,37 @@
 <div id="page">
     <div id="pageheader">
         <div id="header">
-            <div id="heading">
-                <a href="<c:url value="/index.jsp"/>"
-                   style="display: inline-block;background: url(doge_medium.png); padding-left: 40px; background-repeat: no-repeat">DogeLibrary</a><br/>
-                <span id="spanSubNav"><a href="browse.do">Browse</a><c:if test="${sessionScope.user != null}"> | <a
-                        href="lendings.do">Lendings</a><c:if test="${sessionScope.user.isAdmin()}"> | <a
-                        href="admincp.do">Control
-                    panel</a></c:if></c:if></span><br/>
+            <div id="headLogoContainer">
+                <a href="<c:url value="/index.jsp"/>" id="headLogoLink">DogeLibrary</a>
             </div>
-            <div id="containerLogin">
+            <div id="headButtons">
+                <a href="browse.do" class="headButton">Browse</a>
+                <c:if test="${sessionScope.user != null}">
+                    <a href="lendings.do" class="headButton">Lendings</a>
+                    <c:if test="${sessionScope.user.isAdmin()}">
+                        <a href="admincp.do" class="headButton">Control panel</a>
+                    </c:if>
+                </c:if>
+            </div>
+            <div id="headLogin">
                 <c:choose>
                     <c:when test="${sessionScope.user != null}">
-                    <span id="spanLogin">Logged in as <a href="<c:url value="/usercp.do"/>"><c:out
-                            value="${sessionScope.user.getName()}"/></a><br/><a href="logout.do">Logout</a></span>
+                        <a href="usercp.do" class="headButton"><c:out
+                                value="${sessionScope.user.getName()}"/></a>
+                        <a href="logout.do" class="headButton">Logout</a>
                     </c:when>
                     <c:otherwise>
-                        <form method="POST" action="login.do">
-                            <input name="name" class="inputGeneric inputLogin" style="position: absolute"
-                                   placeholder="Username"/>
-                            <input name="password" type="password" class="inputGeneric inputLogin" id="inputPw"
-                                   placeholder="Password"/>
-                            <input type="submit" class="btnGeneric" id="btnLogin" value="Login"/><br/>
-                            <input type="checkbox" name="staylogin" id="staylogin"/>
-                            <label for="staylogin">Stay logged in</label>
-                        </form>
-                        <span id="spanRegNot"><a href="register.jsp">not registered yet?</a></span>
+                        <a href="login.do" class="headButton">Login</a>
+                        <a href="register.do" class="headButton">Register</a>
                     </c:otherwise>
                 </c:choose>
             </div>
         </div>
     </div>
-    <div id="body">
-        <c:choose>
+    <div id="bodyWrapper">
+        <div id="body">
+            <span class="title"><jsp:invoke fragment="title"/></span>
+            <c:choose>
             <c:when test="${status.statusType == 'FAIL'}">
                 <t:fail message="${status.status}">
                     <jsp:invoke fragment="notificationBody"/>
@@ -80,6 +79,7 @@
             <c:otherwise></c:otherwise>
         </c:choose>
         <jsp:doBody/>
+        </div>
     </div>
 </div>
 </body>

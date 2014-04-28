@@ -15,9 +15,9 @@
         </span><br/>
         <span class="title"><a href="book.do?id=<c:out value="${book.id}" />"><c:out value="${book.title}"/></a></span>
 
-        <t:button label="More" link="#" type="accordionButton btnSubmit"/>
-        <div class="logicalGroup" style="display: none;" id="<c:out value="${book.id}" />">
-            <t:book user="${user}" book="${book}" showTitle="${showTitle}"/>
+        <t:button label="More" link="#" type="accordionButton"/>
+        <div style="display: none;" id="<c:out value="${book.id}" />">
+        <t:book user="${user}" book="${book}" showTitle="${showTitle}"/>
         </div>
     </div>
 

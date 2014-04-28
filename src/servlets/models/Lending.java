@@ -108,13 +108,17 @@ public class Lending {
 		return returnArray;
 	}
 
-	public static ArrayList<main.Lending> getUserLendings(int id) {
+	public static ArrayList<main.Lending> getLendings(Object comparand, String criterion) {
 		ArrayList<main.Lending> lendingArrayList = new ArrayList<>();
 		ArrayList<Integer> lendingIdArrayList = new ArrayList<>();
 
 		try {
-			PreparedStatement stmnt = connection.prepareStatement("SELECT id FROM Lendings WHERE user_id = ?");
-			stmnt.setInt(1, id);
+			PreparedStatement stmnt = connection.prepareStatement("SELECT id FROM Lendings WHERE " + criterion + " = ?");
+			if (comparand instanceof Integer) {
+				stmnt.setInt(1, (Integer) comparand);
+			} else if (comparand instanceof Boolean) {
+				stmnt.setBoolean(1, (Boolean) comparand);
+			}
 			ResultSet rs = stmnt.executeQuery();
 			while (rs.next()) {
 				lendingIdArrayList.add(rs.getInt("id"));
@@ -130,6 +134,18 @@ public class Lending {
 		return lendingArrayList;
 	}
 
+	public static ArrayList<main.Lending> getOpenLendings() {
+		return getLendings(false, "collected");
+	}
+
+	public static ArrayList<main.Lending> getBookLendings(int id) {
+		return getLendings(id, "book_id");
+	}
+
+	public static ArrayList<main.Lending> getUserLendings(int id) {
+		return getLendings(id, "user_id");
+	}
+
 	public static main.Lending getLending(int id) {
 		main.Lending lending = new main.Lending();
 
@@ -141,7 +157,7 @@ public class Lending {
 				lending.setId(rs.getInt("id"));
 				lending.setDuration(rs.getInt("duration"));
 				lending.setBook(servlets.models.Book.get(rs.getInt("book_id")));
-				lending.setUser(rs.getInt("user_id"));
+				lending.setUser(servlets.models.User.get(rs.getInt("user_id")));
 				lending.setDate(rs.getDate("lentsince"));
 			}
 		} catch (SQLException e) {

@@ -7,7 +7,18 @@
     <jsp:attribute name="title">
         Login
     </jsp:attribute>
-    <jsp:attribute name="notificationBody">
-        Click <a href="<c:out value="${referer1}"/>">here</a> to get back to your last page.
-    </jsp:attribute>
+
+    <jsp:body>
+        <div class="logicalGroup">
+            <form method="POST" action="login.do" style="margin:auto">
+                <input name="name" class="inputGeneric" style="position: absolute"
+                       placeholder="Username"/><br/>
+                <input name="password" type="password" class="inputGeneric" id="inputPw"
+                       placeholder="Password"/><br/>
+                <input type="checkbox" name="staylogin" id="staylogin"/>
+                <label for="staylogin">Stay logged in</label><br/>
+                <input type="submit" class="btnGeneric btnSubmit" value="Login"/>
+            </form>
+        </div>
+    </jsp:body>
 </t:genericpage>

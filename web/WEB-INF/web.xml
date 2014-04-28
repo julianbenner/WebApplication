@@ -6,7 +6,7 @@
          version="3.0">
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>servlets.Login</servlet-class>
+        <servlet-class>servlets.LoginController</servlet-class>
     </servlet>
 
     <servlet-mapping>
